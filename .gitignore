@@ -1,90 +1,90 @@
-# Xcode
+#Xcode
 #
-# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+# contribuidores do gitignore: lembre-se de atualizar Global/Xcode.gitignore, Objective-C.gitignore e Swift.gitignore
 
-## User settings
+## Configurações do Usuário
 xcuserdata/
 
-## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
+## compatibilidade com o Xcode 8 e versões anteriores (ignorando não é necessário iniciar o Xcode 9)
 *.xcscmblueprint
 *.xccheckout
 
-## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
-build/
-DerivedData/
-*.moved-aside
+## compatibilidade com Xcode 3 e versões anteriores (ignorando não é necessário iniciar o Xcode 4)
+construir/
+Dados Derivados/
+*.movido de lado
 *.pbxuser
 !default.pbxuser
 *.mode1v3
 !default.mode1v3
 *.mode2v3
 !default.mode2v3
-*.perspectivev3
+*.perspectivav3
 !default.perspectivev3
 
-## Obj-C/Swift specific
+## Obj-C/Swift específico
 *.hmap
 
-## App packaging
+## Empacotamento de aplicativos
 *.ipa
 *.dSYM.zip
 *.dSYM
 
-## Playgrounds
-timeline.xctimeline
+## Parques infantis
+linha do tempo.xctimeline
 playground.xcworkspace
 
-# Swift Package Manager
+# Gerenciador de pacotes Swift
 #
-# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
-# Packages/
-# Package.pins
-# Package.resolved
+# Adicione esta linha se quiser evitar o check-in do código-fonte das dependências do Swift Package Manager.
+# Pacotes/
+# Pacote.pins
+# Pacote.resolvido
 # *.xcodeproj
 #
-# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
-# hence it is not needed unless you have added a package configuration file to your project
-# .swiftpm
+# O Xcode gera automaticamente este diretório com um arquivo .xcworkspacedata e xcuserdata
+# portanto, não é necessário, a menos que você tenha adicionado um arquivo de configuração de pacote ao seu projeto
+#.swiftpm
 
-.build/
+.construir/
 
 # CocoaPods
 #
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
+# Recomendamos não adicionar o diretório Pods ao seu .gitignore. No entanto
+# você deve julgar por si mesmo, os prós e os contras são mencionados em:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
 # Pods/
 #
-# Add this line if you want to avoid checking in source code from the Xcode workspace
+# Adicione esta linha se quiser evitar o check-in do código-fonte no espaço de trabalho do Xcode
 # *.xcworkspace
 
-# Carthage
+# Cartago
 #
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
+# Adicione esta linha se quiser evitar o check-in do código-fonte das dependências do Carthage.
+# Cartago/Checkouts
 
-Carthage/Build/
+Cartago/Construir/
 
-# Accio dependency management
-Dependencies/
+# Gerenciamento de dependência Accio
+Dependências/
 .accio/
 
-# fastlane
+#via rápida
 #
-# It is recommended to not store the screenshots in the git repo.
-# Instead, use fastlane to re-generate the screenshots whenever they are needed.
-# For more information about the recommended setup visit:
+# É recomendado não armazenar as capturas de tela no repositório git.
+# Em vez disso, use fastlane para gerar novamente as capturas de tela sempre que necessário.
+# Para obter mais informações sobre a configuração recomendada, visite:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
-fastlane/report.xml
+fastlane/relatório.xml
 fastlane/Preview.html
-fastlane/screenshots/**/*.png
-fastlane/test_output
+fastlane/capturas de tela/**/*.png
+via rápida/test_output
 
-# Code Injection
+# Injeção de código
 #
-# After new code Injection tools there's a generated folder /iOSInjectionProject
+# Após as novas ferramentas de injeção de código, há uma pasta gerada /iOSInjectionProject
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/

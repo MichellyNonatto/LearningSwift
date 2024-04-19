@@ -1,0 +1,9 @@
+
+/* Class = "UISegmentedControl"; Xcp-rs-qUC.segmentTitles[0] = "Dark"; ObjectID = "Xcp-rs-qUC"; */
+"Xcp-rs-qUC.segmentTitles[0]" = "Dark";
+
+/* Class = "UISegmentedControl"; Xcp-rs-qUC.segmentTitles[1] = "White"; ObjectID = "Xcp-rs-qUC"; */
+"Xcp-rs-qUC.segmentTitles[1]" = "White";
+
+/* Class = "UITextView"; text = "Hello World!"; ObjectID = "YdE-5U-3iq"; */
+"YdE-5U-3iq.text" = "Hello World!";

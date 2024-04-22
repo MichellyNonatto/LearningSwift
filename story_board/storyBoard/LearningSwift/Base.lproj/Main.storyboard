@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="top" axis="vertical" distribution="fillProportionally" alignment="center" spacing="64" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HyE-Sw-4J4">
+                            <stackView opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="top" axis="vertical" distribution="fillProportionally" alignment="center" spacing="64" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HyE-Sw-4J4">
                                 <rect key="frame" x="142" y="121" width="108" height="256"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello World!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YdE-5U-3iq">

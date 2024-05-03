@@ -11,16 +11,17 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     var currentValue: Int?
+    var targetValue: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        currentValue = lroundf(slider.value)
+        currentValue = lroundf(slider.value) // Pega o valor mínimo definido no slider localizado na Main
+        targetValue = Int.random(in: 1...100)
     }
     
     /// Cria um pop-up ao clicar no botão `Hit Me`
     @IBAction func showAlert() {
-        let message = "The value of the slider is: \(currentValue!)"
+        let message = "The value of the slider is: \(currentValue!)\nThe target value is: \(targetValue!)"
         let alert = UIAlertController(
             title: "Hello World",
             message: message,

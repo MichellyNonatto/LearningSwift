@@ -31,26 +31,27 @@ class ViewController: UIViewController {
     @IBAction func showAlert() { /// Cria um pop-up ao clicar no botão `Hit Me`
         let difference = abs(currentValue! - targetValue!) /// Função sempre deixa o número possitivo
         let points = 100 - difference
-        self.updateScore(points)
         
         let message = "You scored \(points) points!"
         
         let alert = UIAlertController(
-            title: targetValue! == currentValue! ? "Correct!" : "Wrong",
+            title: performaceGame(points),
             message: message,
             preferredStyle: .alert
         )
         
         let action = UIAlertAction(
             title: "OK",
-            style: .default
+            style: .default,
+            handler: { _ in
+                self.updateScore(points)
+                self.startNewRound()
+                self.updateLabel()
+            }
         )
         
         alert.addAction(action)
         present(alert, animated: true)
-        
-        self.startNewRound()
-        self.updateLabel()
     }
     
     /// Retorna o valor selecionado da `slider`
@@ -96,5 +97,27 @@ class ViewController: UIViewController {
     func updateScore(_ points: Int){
         self.scoreValue += points
         self.targetPoints.text = String(self.scoreValue)
+    }
+    
+    let performaceGame = {(_ points: Int) -> String in
+        if points == 100 {
+            return "Wow, fashionable!!"
+        }else if points >= 90{
+            return "Damn, almost!"
+        }else if points < 90 && points >= 70 {
+            return "Try again, who knows..."
+        }else if points < 70 && points > 30 {
+            return "Come on, you can be better"
+        }else{
+            return "Ok, is this serious?"
+        }
+    }
+    
+    @IBAction func startOver() {
+        self.scoreValue = 0
+        self.roundValue = 1
+        self.updateLabel()
+        self.updateScore(0)
+        self.startNewRound()
     }
 }

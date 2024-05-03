@@ -11,20 +11,29 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     @IBOutlet var targetLabel: UILabel!
+    @IBOutlet var targetPoints: UILabel!
+    @IBOutlet var targetRound: UILabel!
+    
     var currentValue: Int?
     var targetValue: Int?
-    var round = 0
+    var round = 1
+    var score = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.stratNewRound() // Atualiza gerando um novo número randomizado
-        
-        self.updateLabel() // Mostra o valor selecionado
+        self.startNewRound() // Atualiza gerando um novo número randomizado
+        self.updateLabel() // Mostra o valor randomizado
+        self.updateScore(points: score)
+        self.updateRound()
     }
     
     /// Cria um pop-up ao clicar no botão `Hit Me`
     @IBAction func showAlert() {
-        let message = "The value of the slider is: \(currentValue!)\nThe target value is: \(targetValue!)"
+        let difference = abs(currentValue! - targetValue!) // Função sempre deixa o número possitivo
+        let point = 100 - difference
+        self.updateScore(points: point)
+        
+        let message = "You scored \(point) points!"
         let alert = UIAlertController(
             title: targetValue! == currentValue! ? "Correct!" : "Wrong",
             message: message,
@@ -39,7 +48,9 @@ class ViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true)
         
-        self.stratNewRound()
+        self.startNewRound()
+        self.updateLabel()
+        self.updateRound()
     }
     
     /// Retorna o valor selecionado da `slider`
@@ -65,7 +76,7 @@ class ViewController: UIViewController {
         present(alert, animated: true)
     }
     
-    func stratNewRound() {
+    func startNewRound() {
         let numberRamdom = { () -> Int in
             return ((Int.random(in: 1...100) + Int.random(in: 1...100)) % 100) + 1
         }
@@ -76,6 +87,16 @@ class ViewController: UIViewController {
     
     func updateLabel() {
         targetLabel.text = String(targetValue!)
+    }
+    
+    func updateScore(points: Int){
+        score += points
+        targetPoints.text = String(score)
+    }
+    
+    func updateRound() {
+        targetRound.text = String(self.round)
+        self.round += 1
     }
     
 }

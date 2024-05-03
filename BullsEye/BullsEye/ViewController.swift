@@ -12,18 +12,18 @@ class ViewController: UIViewController {
     @IBOutlet var slider: UISlider!
     var currentValue: Int?
     var targetValue: Int?
+    var round = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        currentValue = lroundf(slider.value) // Pega o valor mínimo definido no slider localizado na Main
-        targetValue = Int.random(in: 1...100)
+        self.stratNewRound() // Atualiza gerando um novo número randomizado
     }
     
     /// Cria um pop-up ao clicar no botão `Hit Me`
     @IBAction func showAlert() {
         let message = "The value of the slider is: \(currentValue!)\nThe target value is: \(targetValue!)"
         let alert = UIAlertController(
-            title: "Hello World",
+            title: targetValue! == currentValue! ? "Correct!" : "Wrong",
             message: message,
             preferredStyle: .alert
         )
@@ -35,6 +35,8 @@ class ViewController: UIViewController {
         
         alert.addAction(action)
         present(alert, animated: true)
+        
+        self.stratNewRound()
     }
     
     /// Retorna o valor selecionado da `slider`
@@ -60,6 +62,14 @@ class ViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    func stratNewRound() {
+        var numberRamdom = { () -> Int in
+            return ((Int.random(in: 1...100) + Int.random(in: 1...100)) % 100) + 1
+        }
+        targetValue = numberRamdom()
+        currentValue = lroundf(slider.value) // Pega o valor mínimo definido no slider localizado na Main
+        slider.value = Float(currentValue!)
+    }
     
 }
 

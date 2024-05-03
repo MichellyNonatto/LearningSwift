@@ -1,9 +1,9 @@
-//
-//  ViewController.swift
-//  BullsEye
-//
-//  Created by Michelly Nonato on 30/04/24.
-//
+///
+///  ViewController.swift
+///  BullsEye
+///
+///  Created by Michelly Nonato on 30/04/24.
+///
 
 import UIKit
 
@@ -16,24 +16,25 @@ class ViewController: UIViewController {
     
     var currentValue: Int?
     var targetValue: Int?
-    var round = 1
-    var score = 0
+    
+    var roundValue = 1
+    var scoreValue = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.startNewRound() // Atualiza gerando um novo número randomizado
-        self.updateLabel() // Mostra o valor randomizado
-        self.updateScore(points: score)
-        self.updateRound()
+        
+        self.startNewRound() /// Atualiza gerando um novo número randomizado
+        self.updateLabel() /// Mostra o valor randomizado
+        self.updateScore(scoreValue) /// Atualiza a pontuação total do jogador
     }
     
-    /// Cria um pop-up ao clicar no botão `Hit Me`
-    @IBAction func showAlert() {
-        let difference = abs(currentValue! - targetValue!) // Função sempre deixa o número possitivo
-        let point = 100 - difference
-        self.updateScore(points: point)
+    @IBAction func showAlert() { /// Cria um pop-up ao clicar no botão `Hit Me`
+        let difference = abs(currentValue! - targetValue!) /// Função sempre deixa o número possitivo
+        let points = 100 - difference
+        self.updateScore(points)
         
-        let message = "You scored \(point) points!"
+        let message = "You scored \(points) points!"
+        
         let alert = UIAlertController(
             title: targetValue! == currentValue! ? "Correct!" : "Wrong",
             message: message,
@@ -50,7 +51,6 @@ class ViewController: UIViewController {
         
         self.startNewRound()
         self.updateLabel()
-        self.updateRound()
     }
     
     /// Retorna o valor selecionado da `slider`
@@ -80,24 +80,21 @@ class ViewController: UIViewController {
         let numberRamdom = { () -> Int in
             return ((Int.random(in: 1...100) + Int.random(in: 1...100)) % 100) + 1
         }
-        targetValue = numberRamdom()
-        currentValue = lroundf(slider.value) // Pega o valor mínimo definido no slider localizado na Main
-        slider.value = Float(currentValue!)
+        
+        self.targetValue = numberRamdom()
+        self.currentValue = lroundf(slider.value) /// Pega o valor mínimo definido no slider localizado na Main
+        self.slider.value = Float(currentValue!)
+        
+        self.targetRound.text = String(self.roundValue) /// Atualiza a fase em que o jogador está
+        self.roundValue += 1
     }
     
     func updateLabel() {
-        targetLabel.text = String(targetValue!)
+        self.targetLabel.text = String(targetValue!)
     }
     
-    func updateScore(points: Int){
-        score += points
-        targetPoints.text = String(score)
+    func updateScore(_ points: Int){
+        self.scoreValue += points
+        self.targetPoints.text = String(self.scoreValue)
     }
-    
-    func updateRound() {
-        targetRound.text = String(self.round)
-        self.round += 1
-    }
-    
 }
-

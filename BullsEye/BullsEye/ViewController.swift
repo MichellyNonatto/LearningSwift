@@ -28,7 +28,6 @@ class ViewController: UIViewController {
         self.updateScore(scoreValue) /// Atualiza a pontuação total do jogador
         
         /// Imagem para o controle deslizante
-        
         let thumbImageNormal = UIImage(named: "indicador-flower")!
         slider.setThumbImage(thumbImageNormal, for: .normal)
     }
@@ -37,7 +36,7 @@ class ViewController: UIViewController {
         let difference = abs(currentValue! - targetValue!) /// Função sempre deixa o número possitivo
         let points = 100 - difference
         
-        let message = "You scored \(points) points!\n \(currentValue!)"
+        let message = "You scored \(points) points!"
         
         let alert = UIAlertController(
             title: performaceGame(points),
@@ -73,8 +72,6 @@ class ViewController: UIViewController {
         
         self.targetValue = numberRamdom()
         self.currentValue = lroundf(slider.value) /// Pega o valor mínimo definido no slider localizado na Main
-        self.slider.value = Float(currentValue!)
-        
         self.targetRound.text = String(self.roundValue) /// Atualiza a fase em que o jogador está
         self.roundValue += 1
     }
@@ -105,9 +102,18 @@ class ViewController: UIViewController {
     @IBAction func startOver() {
         self.scoreValue = 0
         self.roundValue = 1
+        self.currentValue = 50
         self.updateLabel()
         self.updateScore(0)
         self.startNewRound()
+        
+        /// Efeito crossfade
+        let transition = CATransition()
+        transition.type = CATransitionType.fade
+        transition.duration = 1
+        transition.timingFunction = CAMediaTimingFunction(
+            name: CAMediaTimingFunctionName.easeOut)
+        view.layer.add(transition, forKey: nil)
     }
-    
+
 }

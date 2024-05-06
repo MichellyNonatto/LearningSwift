@@ -26,13 +26,18 @@ class ViewController: UIViewController {
         self.startNewRound() /// Atualiza gerando um novo número randomizado
         self.updateLabel() /// Mostra o valor randomizado
         self.updateScore(scoreValue) /// Atualiza a pontuação total do jogador
+        
+        /// Imagem para o controle deslizante
+        
+        let thumbImageNormal = UIImage(named: "indicador-flower")!
+        slider.setThumbImage(thumbImageNormal, for: .normal)
     }
     
     @IBAction func showAlert() { /// Cria um pop-up ao clicar no botão `Hit Me`
         let difference = abs(currentValue! - targetValue!) /// Função sempre deixa o número possitivo
         let points = 100 - difference
         
-        let message = "You scored \(points) points!"
+        let message = "You scored \(points) points!\n \(currentValue!)"
         
         let alert = UIAlertController(
             title: performaceGame(points),
@@ -60,23 +65,7 @@ class ViewController: UIViewController {
     }
     
     
-    /// Cria um pop-up ao clicar no botão de informação
-    @IBAction func infoAlert() {
-        let alert = UIAlertController(
-            title: "Informações",
-            message: "Este jogo é para você adivinhar em qual número estou pensando.\nVamos lá, tente a sorte!",
-            preferredStyle: .alert
-        )
-        
-        let action = UIAlertAction(
-            title: "Voltar",
-            style: .default
-        )
-        
-        alert.addAction(action)
-        present(alert, animated: true)
-    }
-    
+    /// Inicia um novo round
     func startNewRound() {
         let numberRamdom = { () -> Int in
             return ((Int.random(in: 1...100) + Int.random(in: 1...100)) % 100) + 1
@@ -120,4 +109,5 @@ class ViewController: UIViewController {
         self.updateScore(0)
         self.startNewRound()
     }
+    
 }

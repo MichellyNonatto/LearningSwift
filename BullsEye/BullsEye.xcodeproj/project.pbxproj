@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		770648C42BE91D2600898D7C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770648C32BE91D2600898D7C /* AboutViewController.swift */; };
+		770648CA2BE9260900898D7C /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 770648C92BE9260900898D7C /* BullsEye.html */; };
 		77E80AC02BE1730B002ABF96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E80ABF2BE1730B002ABF96 /* AppDelegate.swift */; };
 		77E80AC22BE1730B002ABF96 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E80AC12BE1730B002ABF96 /* SceneDelegate.swift */; };
 		77E80AC42BE1730B002ABF96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E80AC32BE1730B002ABF96 /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		770648C32BE91D2600898D7C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AboutViewController.swift; path = BullsEye/AboutViewController.swift; sourceTree = "<group>"; };
+		770648C92BE9260900898D7C /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = BullsEye.html; path = Resources/BullsEye.html; sourceTree = "<group>"; };
 		77E80ABC2BE1730B002ABF96 /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E80ABF2BE1730B002ABF96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E80AC12BE1730B002ABF96 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 		77E80AB32BE1730B002ABF96 = {
 			isa = PBXGroup;
 			children = (
+				770648C32BE91D2600898D7C /* AboutViewController.swift */,
 				77E80ABE2BE1730B002ABF96 /* BullsEye */,
 				77E80AD52BE1730F002ABF96 /* BullsEyeTests */,
 				77E80ADF2BE1730F002ABF96 /* BullsEyeUITests */,
@@ -99,6 +104,7 @@
 		77E80ABE2BE1730B002ABF96 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				770648C92BE9260900898D7C /* BullsEye.html */,
 				77E80ABF2BE1730B002ABF96 /* AppDelegate.swift */,
 				77E80AC12BE1730B002ABF96 /* SceneDelegate.swift */,
 				77E80AC32BE1730B002ABF96 /* ViewController.swift */,
@@ -232,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77E80ACC2BE1730F002ABF96 /* LaunchScreen.storyboard in Resources */,
+				770648CA2BE9260900898D7C /* BullsEye.html in Resources */,
 				77E80AC92BE1730F002ABF96 /* Assets.xcassets in Resources */,
 				77E80AC72BE1730B002ABF96 /* Main.storyboard in Resources */,
 			);
@@ -260,6 +267,7 @@
 			files = (
 				77E80AC42BE1730B002ABF96 /* ViewController.swift in Sources */,
 				77E80AC02BE1730B002ABF96 /* AppDelegate.swift in Sources */,
+				770648C42BE91D2600898D7C /* AboutViewController.swift in Sources */,
 				77E80AC22BE1730B002ABF96 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +455,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -473,6 +483,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

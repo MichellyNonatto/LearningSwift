@@ -15,6 +15,11 @@
 		7736EBC22BED4BBB00912105 /* BullEyeViewCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBC12BED4BBB00912105 /* BullEyeViewCodeTests.swift */; };
 		7736EBCC2BED4BBB00912105 /* BullEyeViewCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBCB2BED4BBB00912105 /* BullEyeViewCodeUITests.swift */; };
 		7736EBCE2BED4BBB00912105 /* BullEyeViewCodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBCD2BED4BBB00912105 /* BullEyeViewCodeUITestsLaunchTests.swift */; };
+		77DE117C2BF2621C001383B6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE117B2BF2621C001383B6 /* MainCoordinator.swift */; };
+		77DE117E2BF26259001383B6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE117D2BF26259001383B6 /* Coordinator.swift */; };
+		77DE11802BF275B3001383B6 /* LoadGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE117F2BF275B2001383B6 /* LoadGameView.swift */; };
+		77DE11822BF2776D001383B6 /* LoadGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE11812BF2776D001383B6 /* LoadGameViewModel.swift */; };
+		77DE11842BF283EA001383B6 /* LoadGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE11832BF283EA001383B6 /* LoadGameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		7736EBC72BED4BBB00912105 /* BullEyeViewCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullEyeViewCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7736EBCB2BED4BBB00912105 /* BullEyeViewCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullEyeViewCodeUITests.swift; sourceTree = "<group>"; };
 		7736EBCD2BED4BBB00912105 /* BullEyeViewCodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullEyeViewCodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		77DE117B2BF2621C001383B6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		77DE117D2BF26259001383B6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		77DE117F2BF275B2001383B6 /* LoadGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameView.swift; sourceTree = "<group>"; };
+		77DE11812BF2776D001383B6 /* LoadGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameViewModel.swift; sourceTree = "<group>"; };
+		77DE11832BF283EA001383B6 /* LoadGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,9 +84,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77092A7E2BF52B2F00C08B59 /* LoadGame */ = {
+			isa = PBXGroup;
+			children = (
+				77DE11832BF283EA001383B6 /* LoadGameModel.swift */,
+				77DE11812BF2776D001383B6 /* LoadGameViewModel.swift */,
+				77DE117F2BF275B2001383B6 /* LoadGameView.swift */,
+				77DE117D2BF26259001383B6 /* Coordinator.swift */,
+				77DE117B2BF2621C001383B6 /* MainCoordinator.swift */,
+			);
+			path = LoadGame;
+			sourceTree = "<group>";
+		};
 		7736EB9E2BED4BB800912105 = {
 			isa = PBXGroup;
 			children = (
+				77092A7E2BF52B2F00C08B59 /* LoadGame */,
 				7736EBA92BED4BB800912105 /* BullEyeViewCode */,
 				7736EBC02BED4BBB00912105 /* BullEyeViewCodeTests */,
 				7736EBCA2BED4BBB00912105 /* BullEyeViewCodeUITests */,
@@ -254,7 +277,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DE11822BF2776D001383B6 /* LoadGameViewModel.swift in Sources */,
+				77DE11842BF283EA001383B6 /* LoadGameModel.swift in Sources */,
 				7736EBAF2BED4BB800912105 /* ViewController.swift in Sources */,
+				77DE117C2BF2621C001383B6 /* MainCoordinator.swift in Sources */,
+				77DE11802BF275B3001383B6 /* LoadGameView.swift in Sources */,
+				77DE117E2BF26259001383B6 /* Coordinator.swift in Sources */,
 				7736EBAB2BED4BB800912105 /* AppDelegate.swift in Sources */,
 				7736EBAD2BED4BB800912105 /* SceneDelegate.swift in Sources */,
 			);
@@ -434,9 +462,7 @@
 				INFOPLIST_FILE = BullEyeViewCode/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -461,9 +487,7 @@
 				INFOPLIST_FILE = BullEyeViewCode/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

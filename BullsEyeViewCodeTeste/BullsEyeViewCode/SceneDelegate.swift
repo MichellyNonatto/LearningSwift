@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  BullEyeViewCode
+//  BullsEyeViewCode
 //
-//  Created by Michelly Nonato on 09/05/24.
+//  Created by Michelly Nonato on 15/05/24.
 //
 
 import UIKit
@@ -10,21 +10,15 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var coodinator: MainCoordinator?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        guard let windowScene = scene as? UIWindowScene else { return } // Se certas condições não forem atendidas, sai do escopo
-        
-        // Iniciar o Coordinator
-        let navigationController = UINavigationController()
-        coodinator = MainCoordinator(navigationController: navigationController)
-        coodinator?.start()
-        window = UIWindow(frame: .zero)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = navigationController
-        window?.windowScene = windowScene
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        let vc = ViewController()
+        window.rootViewController = vc
+        window.makeKeyAndVisible()
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -118,6 +118,9 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         textMin.text = "1"
         textMax.text = "100"
         
+        sliderBar.minimumValue = 1
+        sliderBar.maximumValue = 100
+        
         var score: Int?
         score = 999
         textScore.text = "Score:\t\(score!)"
@@ -144,6 +147,7 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         contentStackView.addArrangedSubview(textMin)
         contentStackView.addArrangedSubview(sliderBar)
         contentStackView.addArrangedSubview(textMax)
+        
         contentStackView.topAnchor.constraint(equalTo: textHelp.bottomAnchor, constant: 90).isActive = true
         contentStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
         contentStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
@@ -156,12 +160,17 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         contentStackViewBottom.addArrangedSubview(textScore)
         contentStackViewBottom.addArrangedSubview(textRound)
         contentStackViewBottom.addArrangedSubview(buttonInfo)
+        
         contentStackViewBottom.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
         contentStackViewBottom.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
         contentStackViewBottom.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
+        
         buttonStart.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        
         textScore.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        
         textRound.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        
         buttonInfo.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
         /*textMin.topAnchor.constraint(equalTo: textHelp.bottomAnchor, constant: 100).isActive = true

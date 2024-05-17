@@ -184,7 +184,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-7Z-SvF">
-                                        <rect key="frame" x="581.00000000001592" y="314.00000000000875" width="50" height="34.000000000003126"/>
+                                        <rect key="frame" x="582.00000000001592" y="314.00000000000875" width="49.666666666666629" height="34.333333333333314"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <buttonConfiguration key="configuration" style="plain" title="">

@@ -8,5 +8,5 @@
 import Foundation
 
 struct LoadGameModel {
-    var text: String?
+    var number: Int?
 }

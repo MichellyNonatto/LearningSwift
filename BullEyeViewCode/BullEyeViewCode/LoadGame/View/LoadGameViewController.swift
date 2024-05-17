@@ -50,10 +50,9 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
     }()
     
     private lazy var buttonAction: UIButton = {
-        let view = UIButton()
+        let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Hit me!", for: .normal)
-        view.setTitleColor(.blue, for: .normal)
         return view
     }()
     
@@ -66,10 +65,9 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
     }()
     
     private lazy var buttonStart: UIButton = {
-        let view = UIButton()
+        let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Start Over", for: .normal)
-        view.setTitleColor(.blue, for: .normal)
         return view
     }()
     
@@ -87,10 +85,8 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
     
     
     private lazy var buttonInfo: UIButton = {
-        let view = UIButton()
+        let view = UIButton(type: .infoLight)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Info", for: .normal) // TODO modificar
-        view.setTitleColor(.blue, for: .normal)
         return view
     }()
     
@@ -110,9 +106,8 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         view.backgroundColor = .white
         viewModel.delegate = self
         
-        var randownNumber:Int?
-        randownNumber = 100 // Chamar a função de randomização
-        textHelp.text = "Put the Bull's Eye as close as you can to: \(randownNumber!)"
+        let randownNumber = viewModel.numberRamdom()
+        textHelp.text = "Put the Bull's Eye as close as you can to: \(randownNumber)"
         textHelp.textAlignment = .center
         
         textMin.text = "1"
@@ -120,6 +115,9 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         
         sliderBar.minimumValue = 1
         sliderBar.maximumValue = 100
+        sliderBar.value = 50
+        let valueSelected = sliderBar.value
+        viewModel.setNumbersGame(slider: Int(valueSelected), random: randownNumber)
         
         var score: Int?
         score = 999
@@ -155,6 +153,7 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         buttonAction.topAnchor.constraint(equalTo: contentStackView.bottomAnchor, constant: 30).isActive = true
         buttonAction.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
         buttonAction.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
+        buttonAction.addTarget(self, action: #selector(popUpAction), for: .touchUpInside)
         
         contentStackViewBottom.addArrangedSubview(buttonStart)
         contentStackViewBottom.addArrangedSubview(textScore)
@@ -184,12 +183,13 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
          textMax.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true*/
         
         
-        
-        
         //        message.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
         //        message.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
         //        message.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
         //        message.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
     }
     
+    @objc private func popUpAction() {
+        viewModel.popUp(self)
+    }
 }

@@ -8,188 +8,74 @@
 /// `` IDEIA:``` A página principal do jogo fica aqui, com os elementos de botão, texto, slider bar, entre outros.
 //
 
-import Foundation
 import UIKit
 
 final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
-    func reject() {
-        print("Error")
-    }
-    
-    // MARK: Classes UIKit
-    private lazy var textHelp: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private lazy var sliderBar: UISlider = {
-        let view = UISlider()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private lazy var textMin: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private lazy var textMax: UILabel = {
-        let view = UILabel(frame: .zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private lazy var contentStackView: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .horizontal
-        view.spacing = 50
-        return view
-    }()
-    
-    private lazy var buttonAction: UIButton = {
-        let view = UIButton(type: .system)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Hit me!", for: .normal)
-        return view
-    }()
-    
-    private lazy var contentStackViewBottom: UIStackView = {
-        let view = UIStackView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.axis = .horizontal
-        view.spacing = 50
-        return view
-    }()
-    
-    private lazy var buttonStart: UIButton = {
-        let view = UIButton(type: .system)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle("Start Over", for: .normal)
-        return view
-    }()
-    
-    private lazy var textScore: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    private lazy var textRound: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
-    
-    private lazy var buttonInfo: UIButton = {
-        let view = UIButton(type: .infoLight)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
+    // MARK: Class
+    private let headerViewComponent = HeaderViewComponent()
+    private let bodyViewComponent = BodyViewComponent()
+    private let footerViewComponent = FooterViewComponent()
     private let viewModel: LoadGameViewModel
     
-    init(viewModel: LoadGameViewModel){
+    init(viewModel: LoadGameViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
-    required init?(coder: NSCoder){
-        fatalError("Erro ao inicializar. Atributo 'coder' não implementado.")
+    func didUpdateValues(values: (numberRandom: Int, score: Int, round: Int)) {
+        headerViewComponent.setupHeader(values.numberRandom)
+        
+        let config = viewModel.getValueStandard()
+        bodyViewComponent.setupBody(minValue: config.min, maxValue: config.max, currentValue: config.value, headerViewComponent)
+        
+        footerViewComponent.setupFooter(score: values.score, round: values.round)
     }
     
+    
+    func reject() {
+        print("Error")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Error in coder.")
+    }
+    
+    // MARK: Constructor
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         viewModel.delegate = self
         
-        let randownNumber = viewModel.numberRamdom()
-        textHelp.text = "Put the Bull's Eye as close as you can to: \(randownNumber)"
-        textHelp.textAlignment = .center
+        let configuration = viewModel.getValueStandard()
+        let values = viewModel.getValueUpdated()
         
-        textMin.text = "1"
-        textMax.text = "100"
+        add(headerViewComponent)
+        add(bodyViewComponent)
+        add(footerViewComponent)
         
-        sliderBar.minimumValue = 1
-        sliderBar.maximumValue = 100
-        sliderBar.value = 50
-        let valueSelected = sliderBar.value
-        viewModel.setNumbersGame(slider: Int(valueSelected), random: randownNumber)
+        headerViewComponent.setupHeader(values.numberRandom)
+        footerViewComponent.setupFooter(score: values.score, round: values.round)
+        bodyViewComponent.setupBody(minValue: configuration.min, maxValue: configuration.max, currentValue: configuration.value, headerViewComponent)
+       
         
-        var score: Int?
-        score = 999
-        textScore.text = "Score:\t\(score!)"
-        
-        var round: Int?
-        round = 999
-        textRound.text = "Round:\t\(round!)"
-        
-        // MARK: Constructor
-        view.addSubview(textHelp)
-        view.addSubview(contentStackView)
-        view.addSubview(buttonAction)
-        view.addSubview(contentStackViewBottom)
-        
-        
-        //        view.addSubview(self.sliderBar)
-        //        view.addSubview(self.textMin)
-        //        view.addSubview(self.textMax)
-        
-        textHelp.topAnchor.constraint(equalTo: view.topAnchor, constant: 50).isActive = true
-        textHelp.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
-        textHelp.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
-        
-        contentStackView.addArrangedSubview(textMin)
-        contentStackView.addArrangedSubview(sliderBar)
-        contentStackView.addArrangedSubview(textMax)
-        
-        contentStackView.topAnchor.constraint(equalTo: textHelp.bottomAnchor, constant: 90).isActive = true
-        contentStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
-        contentStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
-        
-        buttonAction.topAnchor.constraint(equalTo: contentStackView.bottomAnchor, constant: 30).isActive = true
-        buttonAction.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10).isActive = true
-        buttonAction.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10).isActive = true
-        buttonAction.addTarget(self, action: #selector(popUpAction), for: .touchUpInside)
-        
-        contentStackViewBottom.addArrangedSubview(buttonStart)
-        contentStackViewBottom.addArrangedSubview(textScore)
-        contentStackViewBottom.addArrangedSubview(textRound)
-        contentStackViewBottom.addArrangedSubview(buttonInfo)
-        
-        contentStackViewBottom.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10).isActive = true
-        contentStackViewBottom.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
-        contentStackViewBottom.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
-        
-        buttonStart.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        
-        textScore.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        
-        textRound.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        
-        buttonInfo.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        
-        /*textMin.topAnchor.constraint(equalTo: textHelp.bottomAnchor, constant: 100).isActive = true
-         textMin.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
-         
-         sliderBar.topAnchor.constraint(equalTo: textHelp.bottomAnchor, constant: 100).isActive = true
-         sliderBar.leadingAnchor.constraint(equalTo: textMin.trailingAnchor, constant: 50).isActive = true
-         sliderBar.trailingAnchor.constraint(equalTo: textMax.leadingAnchor, constant: -50).isActive = true
-         
-         textMax.topAnchor.constraint(equalTo: textHelp.bottomAnchor, constant: 100).isActive = true
-         textMax.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true*/
-        
-        
-        //        message.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
-        //        message.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
-        //        message.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30).isActive = true
-        //        message.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
+        bodyViewComponent.buttonAction.addTarget(self, action: #selector(popUpAction), for: .touchUpInside)
+        bodyViewComponent.sliderBar.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+    }
+    
+    private func add(_ child: UIViewController) {
+        addChild(child)
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
     }
     
     @objc private func popUpAction() {
+        print("hello")
         viewModel.popUp(self)
+    }
+    
+    @objc private func sliderValueChanged(_ sender: UISlider) {
+        let sliderValue = Int(sender.value)
+        let value = viewModel.getValueUpdated()
+        viewModel.setNumbersGame(slider: sliderValue, random: value.numberRandom)
     }
 }

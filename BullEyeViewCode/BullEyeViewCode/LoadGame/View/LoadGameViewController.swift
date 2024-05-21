@@ -46,7 +46,7 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         
         let configuration = viewModel.getValueStandard()
         let values = viewModel.getValueUpdated()
-
+        
         
         view.addSubview(headerViewComponent)
         view.addSubview(bodyViewComponent)
@@ -57,9 +57,12 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         
         bodyViewComponent.setupBody(minValue: configuration.min, maxValue: configuration.max, value: configuration.value)
         bodyViewComponent.translatesAutoresizingMaskIntoConstraints = false
-
+        
         footerViewComponent.setupFooter(score: values.score, round: values.round)
         footerViewComponent.translatesAutoresizingMaskIntoConstraints = false
+        footerViewComponent.setContentHuggingPriority(.defaultLow, for: .vertical)
+        footerViewComponent.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+        
         
         NSLayoutConstraint.activate([
             headerViewComponent.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
@@ -70,14 +73,17 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
             bodyViewComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
             bodyViewComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
             
-            footerViewComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
-            footerViewComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            footerViewComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            footerViewComponent.topAnchor.constraint(equalTo: bodyViewComponent.bottomAnchor),
+            footerViewComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
+            footerViewComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+            footerViewComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
         ])
         
         
         bodyViewComponent.buttonAction.addTarget(self, action: #selector(popUpAction), for: .touchUpInside)
         bodyViewComponent.sliderBar.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        
+        footerViewComponent.buttonStart.addTarget(self, action: #selector(startAction), for: .touchUpInside)
         
     }
     
@@ -96,5 +102,11 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
     @objc private func sliderValueChanged(_ sender: UISlider) {
         let sliderValue = Int(sender.value)
         viewModel.setSliderGame(slider: sliderValue)
+    }
+    
+    @objc private func startAction() {
+        viewModel.startOver()
+        let values = viewModel.getValueUpdated()
+        didUpdateValues(values: (numberRandom: values.numberRandom, score: values.score, round: values.round))
     }
 }

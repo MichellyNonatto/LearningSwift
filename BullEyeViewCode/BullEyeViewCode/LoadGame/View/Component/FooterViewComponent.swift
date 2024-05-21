@@ -46,17 +46,16 @@ public class FooterViewComponent: UIView {
         textScore.text = "Score:\t\(score)"
         textRound.text = "Round:\t\(round)"
         
-        contentStackViewBottom.addArrangedSubview(buttonStart)
-        contentStackViewBottom.addArrangedSubview(textScore)
-        contentStackViewBottom.addArrangedSubview(textRound)
-        contentStackViewBottom.addArrangedSubview(buttonInfo)
-        
-        
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(contentStackViewBottom)
+        
+        contentStackViewBottom.addArrangedSubview(buttonStart)
+        contentStackViewBottom.addArrangedSubview(textScore)
+        contentStackViewBottom.addArrangedSubview(textRound)
+        contentStackViewBottom.addArrangedSubview(buttonInfo)
         
         NSLayoutConstraint.activate([
             contentStackViewBottom.bottomAnchor.constraint(equalTo: bottomAnchor),

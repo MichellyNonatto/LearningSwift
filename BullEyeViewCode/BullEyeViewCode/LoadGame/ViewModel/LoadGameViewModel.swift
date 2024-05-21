@@ -104,6 +104,14 @@ final class LoadGameViewModel {
         }
     }
     
+    public func startOver(){
+        self.model.sliderValue = 50
+        self.model.points = 0
+        self.model.level = 0
+        self.model.score = 0
+        self.model.randomValue = numberRandom()
+    }
+    
     private func notifyDelegate() {
         let updatedValues = getValueUpdated()
         delegate?.didUpdateValues(values: updatedValues)

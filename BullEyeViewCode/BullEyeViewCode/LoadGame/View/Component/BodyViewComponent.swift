@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class BodyViewComponent: UIViewController {
+public class BodyViewComponent: UIView {
     
     public lazy var sliderBar: UISlider = {
         let view = UISlider()
@@ -42,9 +42,9 @@ public class BodyViewComponent: UIViewController {
         return view
     }()
     
-    public func setupBody(minValue: Int, maxValue: Int, currentValue: Int, _ component: HeaderViewComponent) {
-        view.addSubview(contentStackView)
-        view.addSubview(buttonAction)
+    public func setupBody(minValue: Int, maxValue: Int, currentValue: Int) {
+        addSubview(contentStackView)
+        addSubview(buttonAction)
         
         textMin.text = String(minValue)
         textMax.text = String(maxValue)
@@ -58,13 +58,14 @@ public class BodyViewComponent: UIViewController {
         contentStackView.addArrangedSubview(textMax)
         
         NSLayoutConstraint.activate([
-            contentStackView.topAnchor.constraint(equalTo: component.textHelp.bottomAnchor, constant: 100),
-            contentStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
-            contentStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+            contentStackView.topAnchor.constraint(equalTo: topAnchor),
+            contentStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             buttonAction.topAnchor.constraint(equalTo: contentStackView.bottomAnchor, constant: 30),
-            buttonAction.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            buttonAction.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10)
+            buttonAction.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            buttonAction.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            buttonAction.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
     }
 }

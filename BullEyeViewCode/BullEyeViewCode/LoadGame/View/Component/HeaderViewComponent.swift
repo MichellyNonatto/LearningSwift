@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class HeaderViewComponent: UIViewController {
+public class HeaderViewComponent: UIView {
     
     public lazy var textHelp: UILabel = {
         let view = UILabel()
@@ -16,15 +16,26 @@ public class HeaderViewComponent: UIViewController {
     }()
     
     public func setupHeader(_ numberRandom: Int) {
-        view.addSubview(textHelp)
-        
         textHelp.text = "Put the Bull's Eye as close as you can to: \(numberRandom)"
         textHelp.textAlignment = .center
+        textHelp.textColor = .red
+        backgroundColor = .red
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        addSubview(textHelp)
         
         NSLayoutConstraint.activate([
-            textHelp.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            textHelp.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            textHelp.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
+            textHelp.topAnchor.constraint(equalTo: topAnchor),
+            textHelp.leadingAnchor.constraint(equalTo: leadingAnchor),
+            textHelp.trailingAnchor.constraint(equalTo: trailingAnchor),
+            textHelp.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

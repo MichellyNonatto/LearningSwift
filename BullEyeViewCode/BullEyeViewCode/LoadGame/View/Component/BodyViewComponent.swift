@@ -42,20 +42,26 @@ public class BodyViewComponent: UIView {
         return view
     }()
     
-    public func setupBody(minValue: Int, maxValue: Int, currentValue: Int) {
-        addSubview(contentStackView)
-        addSubview(buttonAction)
-        
+    public func setupBody(minValue: Int, maxValue: Int, value: Int) {
         textMin.text = String(minValue)
         textMax.text = String(maxValue)
         
         sliderBar.minimumValue = Float(minValue)
         sliderBar.maximumValue = Float(maxValue)
-        sliderBar.value = Float(currentValue)
+        sliderBar.value = Float(value)
         
         contentStackView.addArrangedSubview(textMin)
         contentStackView.addArrangedSubview(sliderBar)
         contentStackView.addArrangedSubview(textMax)
+        
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(contentStackView)
+        addSubview(buttonAction)
+        
+        sliderBar.value = 50
         
         NSLayoutConstraint.activate([
             contentStackView.topAnchor.constraint(equalTo: topAnchor),
@@ -67,5 +73,9 @@ public class BodyViewComponent: UIView {
             buttonAction.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             buttonAction.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
         ])
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

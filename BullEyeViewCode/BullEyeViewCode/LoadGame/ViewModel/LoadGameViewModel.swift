@@ -22,19 +22,19 @@ final class LoadGameViewModel {
     
     init(coordinator: MainCoordinator) {
         self.coordinator = coordinator
-        self.model = LoadGameModel(points: 0, level: 0, score: 0)
+        self.model = LoadGameModel(sliderValue: 50, points: 0, level: 0, score: 0)
+        self.model.randomValue = numberRandom()
     }
     
     public func getValueStandard() -> (min: Int, max: Int, value: Int) {
         return (
             min: self.model.min,
             max: self.model.max,
-            value: self.model.value
+            value: self.model.sliderValue
         )
     }
     
     public func getValueUpdated() -> (numberRandom: Int, score: Int, round: Int){
-        self.model.randomValue = numberRandom()
         return (
             numberRandom: self.model.randomValue!,
             score: self.model.score,
@@ -47,19 +47,26 @@ final class LoadGameViewModel {
         return self.model.randomValue!
     }
     
-    public func setNumbersGame(slider: Int, random: Int){ // Atualiza com os valores escolhidos
+    private func calcPoints(sliderValue: Int){
+        let difference = abs(sliderValue - self.model.randomValue!)
+        let points = 100 - difference
+        self.model.points = points
+    }
+    
+    public func setSliderGame(slider: Int){
         self.model.sliderValue = slider
-        self.model.randomValue = random
-        
-        // Calcula a pontuação
-        let difference = abs(slider - random)
-        model.points = 100 - difference
-        
-        self.model.sliderValue = self.model.sliderValue
+    }
+    
+    
+    private func setNewRound(_ points: Int) {
+        self.model.score += points
+        self.model.level += 1
         self.model.randomValue = numberRandom()
     }
     
     public func popUp(_ viewController: UIViewController){
+        self.calcPoints(sliderValue: self.model.sliderValue)
+                
         let message = "You scored \(self.model.points) points!"
         
         let alert = UIAlertController(
@@ -76,12 +83,7 @@ final class LoadGameViewModel {
         alert.addAction(action)
         viewController.present(alert, animated: true, completion: nil)
         
-        setNewRound(self.model.points)
-    }
-    
-    private func setNewRound(_ points: Int) {
-        self.model.score += points
-        self.model.level += 1
+        self.setNewRound(self.model.points)
     }
     
     private let performaceGame: (Any) -> String = { points in

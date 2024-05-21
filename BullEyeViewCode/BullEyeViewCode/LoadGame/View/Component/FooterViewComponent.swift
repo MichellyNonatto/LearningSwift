@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class FooterViewComponent: UIViewController {
+public class FooterViewComponent: UIView {
     
     public lazy var buttonStart: UIButton = {
         let view = UIButton(type: .system)
@@ -43,8 +43,6 @@ public class FooterViewComponent: UIViewController {
     }()
     
     public func setupFooter(score: Int, round: Int) {
-        view.addSubview(contentStackViewBottom)
-        
         textScore.text = "Score:\t\(score)"
         textRound.text = "Round:\t\(round)"
         
@@ -53,10 +51,17 @@ public class FooterViewComponent: UIViewController {
         contentStackViewBottom.addArrangedSubview(textRound)
         contentStackViewBottom.addArrangedSubview(buttonInfo)
         
+        
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(contentStackViewBottom)
+        
         NSLayoutConstraint.activate([
-            contentStackViewBottom.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
-            contentStackViewBottom.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            contentStackViewBottom.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            contentStackViewBottom.bottomAnchor.constraint(equalTo: bottomAnchor),
+            contentStackViewBottom.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentStackViewBottom.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             buttonStart.widthAnchor.constraint(equalToConstant: 100),
             buttonInfo.widthAnchor.constraint(equalToConstant: 50),
@@ -65,4 +70,9 @@ public class FooterViewComponent: UIViewController {
             textRound.widthAnchor.constraint(equalToConstant: 200)
         ])
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }

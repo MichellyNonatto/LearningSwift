@@ -18,8 +18,6 @@ public class HeaderViewComponent: UIView {
     public func setupHeader(_ numberRandom: Int) {
         textHelp.text = "Put the Bull's Eye as close as you can to: \(numberRandom)"
         textHelp.textAlignment = .center
-        textHelp.textColor = .red
-        backgroundColor = .red
     }
     
     override init(frame: CGRect) {

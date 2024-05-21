@@ -10,9 +10,8 @@ import Foundation
 struct LoadGameModel {
     let min = 1
     let max = 100
-    let value = 50
     
-    var sliderValue: Int?
+    var sliderValue: Int
     var randomValue: Int?
     
     var points: Int

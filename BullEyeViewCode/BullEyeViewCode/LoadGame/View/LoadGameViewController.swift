@@ -23,11 +23,9 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
     }
     
     func didUpdateValues(values: (numberRandom: Int, score: Int, round: Int)) {
-        headerViewComponent.setupHeader(values.numberRandom)
-        
         let config = viewModel.getValueStandard()
-        bodyViewComponent.setupBody(minValue: config.min, maxValue: config.max, currentValue: config.value)
-        
+        headerViewComponent.setupHeader(values.numberRandom)
+        bodyViewComponent.setupBody(minValue: config.min, maxValue: config.max, value: config.value)
         footerViewComponent.setupFooter(score: values.score, round: values.round)
     }
     
@@ -48,30 +46,38 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         
         let configuration = viewModel.getValueStandard()
         let values = viewModel.getValueUpdated()
+
         
         view.addSubview(headerViewComponent)
-//        view.addSubview(bodyViewComponent)
-        //view.addSubview(footerViewComponent)
+        view.addSubview(bodyViewComponent)
+        view.addSubview(footerViewComponent)
         
         headerViewComponent.setupHeader(values.numberRandom)
-//        bodyViewComponent.setupBody(minValue: configuration.min, maxValue: configuration.max, currentValue: configuration.value)
-        //footerViewComponent.setupFooter(score: values.score, round: values.round)
-       
+        headerViewComponent.translatesAutoresizingMaskIntoConstraints = false
         
-//        bodyViewComponent.buttonAction.addTarget(self, action: #selector(popUpAction), for: .touchUpInside)
-//        bodyViewComponent.sliderBar.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        bodyViewComponent.setupBody(minValue: configuration.min, maxValue: configuration.max, value: configuration.value)
+        bodyViewComponent.translatesAutoresizingMaskIntoConstraints = false
+
+        footerViewComponent.setupFooter(score: values.score, round: values.round)
+        footerViewComponent.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             headerViewComponent.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
             headerViewComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             headerViewComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             
-//            bodyViewComponent.topAnchor.constraint(equalTo: headerViewComponent.bottomAnchor, constant: 100),
-//            bodyViewComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
-//            bodyViewComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
-           // bodyViewComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+            bodyViewComponent.topAnchor.constraint(equalTo: headerViewComponent.bottomAnchor, constant: 100),
+            bodyViewComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
+            bodyViewComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+            
+            footerViewComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10),
+            footerViewComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            footerViewComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
         ])
         
+        
+        bodyViewComponent.buttonAction.addTarget(self, action: #selector(popUpAction), for: .touchUpInside)
+        bodyViewComponent.sliderBar.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
         
     }
     
@@ -83,11 +89,12 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
     
     @objc private func popUpAction() {
         viewModel.popUp(self)
+        let values = viewModel.getValueUpdated()
+        didUpdateValues(values: (numberRandom: values.numberRandom, score: values.score, round: values.round))
     }
     
     @objc private func sliderValueChanged(_ sender: UISlider) {
         let sliderValue = Int(sender.value)
-        let value = viewModel.getValueUpdated()
-        viewModel.setNumbersGame(slider: sliderValue, random: value.numberRandom)
+        viewModel.setSliderGame(slider: sliderValue)
     }
 }

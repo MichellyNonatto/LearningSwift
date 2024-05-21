@@ -26,7 +26,7 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         headerViewComponent.setupHeader(values.numberRandom)
         
         let config = viewModel.getValueStandard()
-        bodyViewComponent.setupBody(minValue: config.min, maxValue: config.max, currentValue: config.value, headerViewComponent)
+        bodyViewComponent.setupBody(minValue: config.min, maxValue: config.max, currentValue: config.value)
         
         footerViewComponent.setupFooter(score: values.score, round: values.round)
     }
@@ -49,17 +49,30 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         let configuration = viewModel.getValueStandard()
         let values = viewModel.getValueUpdated()
         
-        add(headerViewComponent)
-        add(bodyViewComponent)
-        add(footerViewComponent)
+        view.addSubview(headerViewComponent)
+//        view.addSubview(bodyViewComponent)
+        //view.addSubview(footerViewComponent)
         
         headerViewComponent.setupHeader(values.numberRandom)
-        footerViewComponent.setupFooter(score: values.score, round: values.round)
-        bodyViewComponent.setupBody(minValue: configuration.min, maxValue: configuration.max, currentValue: configuration.value, headerViewComponent)
+//        bodyViewComponent.setupBody(minValue: configuration.min, maxValue: configuration.max, currentValue: configuration.value)
+        //footerViewComponent.setupFooter(score: values.score, round: values.round)
        
         
-        bodyViewComponent.buttonAction.addTarget(self, action: #selector(popUpAction), for: .touchUpInside)
-        bodyViewComponent.sliderBar.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+//        bodyViewComponent.buttonAction.addTarget(self, action: #selector(popUpAction), for: .touchUpInside)
+//        bodyViewComponent.sliderBar.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        
+        NSLayoutConstraint.activate([
+            headerViewComponent.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+            headerViewComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            headerViewComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            
+//            bodyViewComponent.topAnchor.constraint(equalTo: headerViewComponent.bottomAnchor, constant: 100),
+//            bodyViewComponent.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60),
+//            bodyViewComponent.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60),
+           // bodyViewComponent.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -60),
+        ])
+        
+        
     }
     
     private func add(_ child: UIViewController) {
@@ -69,7 +82,6 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
     }
     
     @objc private func popUpAction() {
-        print("hello")
         viewModel.popUp(self)
     }
     

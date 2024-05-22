@@ -12,14 +12,20 @@ import UIKit
 final class MainCoordinator: Coordinator {
     var navigationController: UINavigationController
     
-    init(navigationController: UINavigationController){ // Qual tela deve ser apresentada?
+    init(navigationController: UINavigationController){
         self.navigationController = navigationController
     }
     
     @MainActor
     func start() {
         let viewModel = LoadGameViewModel(coordinator: self)
-        let vc = LoadGameView(viewModel: viewModel)
+        let vc = LoadGameViewController(viewModel: viewModel)
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func showInfoGameScreen(){
+        let viewModel = InfoGameViewModel(coordinator: self)
+        let vc = InfoGameViewController(viewModel: viewModel)
         navigationController.pushViewController(vc, animated: true)
     }
 }

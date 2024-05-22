@@ -10,7 +10,7 @@
 
 import UIKit
 
-final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
+final class LoadGameViewController: UIViewController, LoadGameViewModelDelegate {
     // MARK: Class
     private let headerViewComponent = HeaderViewComponent()
     private let bodyViewComponent = BodyViewComponent()
@@ -41,7 +41,8 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
     // MARK: Constructor
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "iPhone 14 & 15 Pro Max - 1") ?? UIImage())
+        
         viewModel.delegate = self
         
         let configuration = viewModel.getValueStandard()
@@ -84,6 +85,7 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         bodyViewComponent.sliderBar.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
         
         footerViewComponent.buttonStart.addTarget(self, action: #selector(startAction), for: .touchUpInside)
+        footerViewComponent.buttonInfo.addTarget(self, action: #selector(infoScreen), for: .touchUpInside)
         
     }
     
@@ -108,5 +110,9 @@ final class LoadGameView: UIViewController, LoadGameViewModelDelegate {
         viewModel.startOver()
         let values = viewModel.getValueUpdated()
         didUpdateValues(values: (numberRandom: values.numberRandom, score: values.score, round: values.round))
+    }
+    
+    @objc private func infoScreen() {
+        viewModel.presentInfoGameScreen()
     }
 }

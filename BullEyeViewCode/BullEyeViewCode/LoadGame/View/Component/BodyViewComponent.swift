@@ -19,6 +19,7 @@ public class BodyViewComponent: UIView {
         let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Hit Me!", for: .normal)
+        view.tintColor = .white
         return view
     }()
     
@@ -49,6 +50,12 @@ public class BodyViewComponent: UIView {
         sliderBar.minimumValue = Float(minValue)
         sliderBar.maximumValue = Float(maxValue)
         sliderBar.value = Float(value)
+        sliderBar.tintColor = #colorLiteral(red: 0.983053267, green: 0.7389490008, blue: 0.947195828, alpha: 1)
+        sliderBar.setThumbImage(UIImage(named: "indicador-flower 1"), for: .normal)
+        
+        buttonAction.backgroundColor = #colorLiteral(red: 0.6979125738, green: 0.3404893279, blue: 0.8699842095, alpha: 0.8)
+        buttonAction.layer.cornerRadius = 10
+        buttonAction.clipsToBounds = true
         
         contentStackView.addArrangedSubview(textMin)
         contentStackView.addArrangedSubview(sliderBar)
@@ -69,9 +76,9 @@ public class BodyViewComponent: UIView {
             contentStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             buttonAction.topAnchor.constraint(equalTo: contentStackView.bottomAnchor, constant: 30),
-            buttonAction.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            buttonAction.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            buttonAction.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10)
+            buttonAction.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 300),
+            buttonAction.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -300),
+            buttonAction.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
         ])
     }
     

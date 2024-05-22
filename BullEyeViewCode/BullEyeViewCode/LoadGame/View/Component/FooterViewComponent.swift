@@ -13,6 +13,7 @@ public class FooterViewComponent: UIView {
         let view = UIButton(type: .system)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("Start Over", for: .normal)
+        view.tintColor = .white
         return view
     }()
     
@@ -31,6 +32,7 @@ public class FooterViewComponent: UIView {
     public lazy var buttonInfo: UIButton = {
         let view = UIButton(type: .infoLight)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.tintColor = .white
         return view
     }()
     
@@ -45,6 +47,14 @@ public class FooterViewComponent: UIView {
     public func setupFooter(score: Int, round: Int) {
         textScore.text = "Score:\t\(score)"
         textRound.text = "Round:\t\(round)"
+        
+        buttonStart.backgroundColor = #colorLiteral(red: 0.6979125738, green: 0.3404893279, blue: 0.8699842095, alpha: 0.8)
+        buttonStart.layer.cornerRadius = 10
+        buttonStart.clipsToBounds = true
+        
+        buttonInfo.backgroundColor = #colorLiteral(red: 0.6979125738, green: 0.3404893279, blue: 0.8699842095, alpha: 0.8)
+        buttonInfo.layer.cornerRadius = 10
+        buttonInfo.clipsToBounds = true
         
     }
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		770C7EFB2BFE35790080A5F4 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 770C7EFA2BFE35790080A5F4 /* BullsEye.html */; };
 		7725883B2BFBAE5300D4DC4A /* HeaderViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725883A2BFBAE5300D4DC4A /* HeaderViewComponent.swift */; };
 		7725883D2BFBAE7300D4DC4A /* BodyViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725883C2BFBAE7300D4DC4A /* BodyViewComponent.swift */; };
 		7725883F2BFBAE7D00D4DC4A /* FooterViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7725883E2BFBAE7D00D4DC4A /* FooterViewComponent.swift */; };
@@ -18,6 +19,9 @@
 		7736EBC22BED4BBB00912105 /* BullEyeViewCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBC12BED4BBB00912105 /* BullEyeViewCodeTests.swift */; };
 		7736EBCC2BED4BBB00912105 /* BullEyeViewCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBCB2BED4BBB00912105 /* BullEyeViewCodeUITests.swift */; };
 		7736EBCE2BED4BBB00912105 /* BullEyeViewCodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7736EBCD2BED4BBB00912105 /* BullEyeViewCodeUITestsLaunchTests.swift */; };
+		779BEC892BFD233A0044696D /* InfoGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779BEC882BFD233A0044696D /* InfoGameViewController.swift */; };
+		779BEC8B2BFD234C0044696D /* InfoGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779BEC8A2BFD234C0044696D /* InfoGameViewModel.swift */; };
+		779BEC8D2BFD23620044696D /* InfoGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779BEC8C2BFD23620044696D /* InfoGameModel.swift */; };
 		77DE117C2BF2621C001383B6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE117B2BF2621C001383B6 /* MainCoordinator.swift */; };
 		77DE117E2BF26259001383B6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE117D2BF26259001383B6 /* Coordinator.swift */; };
 		77DE11802BF275B3001383B6 /* LoadGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DE117F2BF275B2001383B6 /* LoadGameViewController.swift */; };
@@ -43,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		770C7EFA2BFE35790080A5F4 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 		7725883A2BFBAE5300D4DC4A /* HeaderViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewComponent.swift; sourceTree = "<group>"; };
 		7725883C2BFBAE7300D4DC4A /* BodyViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyViewComponent.swift; sourceTree = "<group>"; };
 		7725883E2BFBAE7D00D4DC4A /* FooterViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterViewComponent.swift; sourceTree = "<group>"; };
@@ -58,6 +63,9 @@
 		7736EBC72BED4BBB00912105 /* BullEyeViewCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullEyeViewCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7736EBCB2BED4BBB00912105 /* BullEyeViewCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullEyeViewCodeUITests.swift; sourceTree = "<group>"; };
 		7736EBCD2BED4BBB00912105 /* BullEyeViewCodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullEyeViewCodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		779BEC882BFD233A0044696D /* InfoGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGameViewController.swift; sourceTree = "<group>"; };
+		779BEC8A2BFD234C0044696D /* InfoGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGameViewModel.swift; sourceTree = "<group>"; };
+		779BEC8C2BFD23620044696D /* InfoGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGameModel.swift; sourceTree = "<group>"; };
 		77DE117B2BF2621C001383B6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		77DE117D2BF26259001383B6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		77DE117F2BF275B2001383B6 /* LoadGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadGameViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +108,15 @@
 			path = LoadGame;
 			sourceTree = "<group>";
 		};
+		770C7EF92BFE35790080A5F4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				770C7EFA2BFE35790080A5F4 /* BullsEye.html */,
+			);
+			name = Resources;
+			path = ../../BullsEye/BullsEye/Resources;
+			sourceTree = "<group>";
+		};
 		772588392BFBAE2D00D4DC4A /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +150,7 @@
 		7736EBA92BED4BB800912105 /* BullEyeViewCode */ = {
 			isa = PBXGroup;
 			children = (
+				779BEC842BFD23040044696D /* InfoGame */,
 				77092A7E2BF52B2F00C08B59 /* LoadGame */,
 				77DE117D2BF26259001383B6 /* Coordinator.swift */,
 				77DE117B2BF2621C001383B6 /* MainCoordinator.swift */,
@@ -142,6 +160,7 @@
 				7736EBB32BED4BBB00912105 /* Assets.xcassets */,
 				7736EBB52BED4BBB00912105 /* LaunchScreen.storyboard */,
 				7736EBB82BED4BBB00912105 /* Info.plist */,
+				770C7EF92BFE35790080A5F4 /* Resources */,
 			);
 			path = BullEyeViewCode;
 			sourceTree = "<group>";
@@ -161,6 +180,40 @@
 				7736EBCD2BED4BBB00912105 /* BullEyeViewCodeUITestsLaunchTests.swift */,
 			);
 			path = BullEyeViewCodeUITests;
+			sourceTree = "<group>";
+		};
+		779BEC842BFD23040044696D /* InfoGame */ = {
+			isa = PBXGroup;
+			children = (
+				779BEC872BFD231F0044696D /* Model */,
+				779BEC862BFD23180044696D /* ViewModel */,
+				779BEC852BFD23110044696D /* View */,
+			);
+			path = InfoGame;
+			sourceTree = "<group>";
+		};
+		779BEC852BFD23110044696D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				779BEC882BFD233A0044696D /* InfoGameViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		779BEC862BFD23180044696D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				779BEC8A2BFD234C0044696D /* InfoGameViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		779BEC872BFD231F0044696D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				779BEC8C2BFD23620044696D /* InfoGameModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		77A3759F2BF6815100945F78 /* View */ = {
@@ -293,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7736EBB72BED4BBB00912105 /* LaunchScreen.storyboard in Resources */,
+				770C7EFB2BFE35790080A5F4 /* BullsEye.html in Resources */,
 				7736EBB42BED4BBB00912105 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,11 +375,14 @@
 				77DE11822BF2776D001383B6 /* LoadGameViewModel.swift in Sources */,
 				7725883B2BFBAE5300D4DC4A /* HeaderViewComponent.swift in Sources */,
 				77DE11842BF283EA001383B6 /* LoadGameModel.swift in Sources */,
+				779BEC8B2BFD234C0044696D /* InfoGameViewModel.swift in Sources */,
 				7736EBAF2BED4BB800912105 /* ViewController.swift in Sources */,
+				779BEC8D2BFD23620044696D /* InfoGameModel.swift in Sources */,
 				77DE117C2BF2621C001383B6 /* MainCoordinator.swift in Sources */,
 				77DE11802BF275B3001383B6 /* LoadGameViewController.swift in Sources */,
 				77DE117E2BF26259001383B6 /* Coordinator.swift in Sources */,
 				7736EBAB2BED4BB800912105 /* AppDelegate.swift in Sources */,
+				779BEC892BFD233A0044696D /* InfoGameViewController.swift in Sources */,
 				7736EBAD2BED4BB800912105 /* SceneDelegate.swift in Sources */,
 				7725883F2BFBAE7D00D4DC4A /* FooterViewComponent.swift in Sources */,
 				7725883D2BFBAE7300D4DC4A /* BodyViewComponent.swift in Sources */,

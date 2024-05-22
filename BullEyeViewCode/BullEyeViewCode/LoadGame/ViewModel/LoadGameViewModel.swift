@@ -116,4 +116,8 @@ final class LoadGameViewModel {
         let updatedValues = getValueUpdated()
         delegate?.didUpdateValues(values: updatedValues)
     }
+    
+    public func presentInfoGameScreen(){
+        coordinator.showInfoGameScreen()
+    }
 }

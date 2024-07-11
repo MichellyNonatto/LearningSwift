@@ -1,14 +1,14 @@
 //
-//  BullsEyeViewCodeTests.swift
-//  BullsEyeViewCodeTests
+//  ExpanseTrackerTests.swift
+//  ExpanseTrackerTests
 //
-//  Created by Michelly Nonato on 15/05/24.
+//  Created by Michelly Nonato on 11/06/24.
 //
 
 import XCTest
-@testable import BullsEyeViewCode
+@testable import ExpanseTracker
 
-final class BullsEyeViewCodeTests: XCTestCase {
+final class ExpanseTrackerTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -7,64 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77092A4F2BF51C0200C08B59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77092A4E2BF51C0200C08B59 /* AppDelegate.swift */; };
-		77092A512BF51C0200C08B59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77092A502BF51C0200C08B59 /* SceneDelegate.swift */; };
-		77092A532BF51C0200C08B59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77092A522BF51C0200C08B59 /* ViewController.swift */; };
-		77092A582BF51C0400C08B59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77092A572BF51C0400C08B59 /* Assets.xcassets */; };
-		77092A5B2BF51C0400C08B59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77092A592BF51C0400C08B59 /* LaunchScreen.storyboard */; };
-		77092A662BF51C0400C08B59 /* BullsEyeViewCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77092A652BF51C0400C08B59 /* BullsEyeViewCodeTests.swift */; };
-		77092A702BF51C0400C08B59 /* BullsEyeViewCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77092A6F2BF51C0400C08B59 /* BullsEyeViewCodeUITests.swift */; };
-		77092A722BF51C0400C08B59 /* BullsEyeViewCodeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77092A712BF51C0400C08B59 /* BullsEyeViewCodeUITestsLaunchTests.swift */; };
+		7711D3C72C18C643009A0AD2 /* ExpanseTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D3C62C18C643009A0AD2 /* ExpanseTrackerApp.swift */; };
+		7711D3C92C18C643009A0AD2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D3C82C18C643009A0AD2 /* ContentView.swift */; };
+		7711D3CB2C18C645009A0AD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7711D3CA2C18C645009A0AD2 /* Assets.xcassets */; };
+		7711D3CE2C18C645009A0AD2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7711D3CD2C18C645009A0AD2 /* Preview Assets.xcassets */; };
+		7711D3D82C18C645009A0AD2 /* ExpanseTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D3D72C18C645009A0AD2 /* ExpanseTrackerTests.swift */; };
+		7711D3E22C18C645009A0AD2 /* ExpanseTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D3E12C18C645009A0AD2 /* ExpanseTrackerUITests.swift */; };
+		7711D3E42C18C645009A0AD2 /* ExpanseTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D3E32C18C645009A0AD2 /* ExpanseTrackerUITestsLaunchTests.swift */; };
+		7711D3F32C18CF5E009A0AD2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711D3F22C18CF5E009A0AD2 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		77092A622BF51C0400C08B59 /* PBXContainerItemProxy */ = {
+		7711D3D42C18C645009A0AD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 77092A432BF51C0200C08B59 /* Project object */;
+			containerPortal = 7711D3BB2C18C643009A0AD2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 77092A4A2BF51C0200C08B59;
-			remoteInfo = BullsEyeViewCode;
+			remoteGlobalIDString = 7711D3C22C18C643009A0AD2;
+			remoteInfo = ExpanseTracker;
 		};
-		77092A6C2BF51C0400C08B59 /* PBXContainerItemProxy */ = {
+		7711D3DE2C18C645009A0AD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 77092A432BF51C0200C08B59 /* Project object */;
+			containerPortal = 7711D3BB2C18C643009A0AD2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 77092A4A2BF51C0200C08B59;
-			remoteInfo = BullsEyeViewCode;
+			remoteGlobalIDString = 7711D3C22C18C643009A0AD2;
+			remoteInfo = ExpanseTracker;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		77092A4B2BF51C0200C08B59 /* BullsEyeViewCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEyeViewCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		77092A4E2BF51C0200C08B59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		77092A502BF51C0200C08B59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77092A522BF51C0200C08B59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		77092A572BF51C0400C08B59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		77092A5A2BF51C0400C08B59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		77092A5C2BF51C0400C08B59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		77092A612BF51C0400C08B59 /* BullsEyeViewCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullsEyeViewCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		77092A652BF51C0400C08B59 /* BullsEyeViewCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeViewCodeTests.swift; sourceTree = "<group>"; };
-		77092A6B2BF51C0400C08B59 /* BullsEyeViewCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullsEyeViewCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		77092A6F2BF51C0400C08B59 /* BullsEyeViewCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeViewCodeUITests.swift; sourceTree = "<group>"; };
-		77092A712BF51C0400C08B59 /* BullsEyeViewCodeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullsEyeViewCodeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7711D3C32C18C643009A0AD2 /* ExpanseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpanseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7711D3C62C18C643009A0AD2 /* ExpanseTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpanseTrackerApp.swift; sourceTree = "<group>"; };
+		7711D3C82C18C643009A0AD2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7711D3CA2C18C645009A0AD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7711D3CD2C18C645009A0AD2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7711D3D32C18C645009A0AD2 /* ExpanseTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpanseTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7711D3D72C18C645009A0AD2 /* ExpanseTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpanseTrackerTests.swift; sourceTree = "<group>"; };
+		7711D3DD2C18C645009A0AD2 /* ExpanseTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExpanseTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7711D3E12C18C645009A0AD2 /* ExpanseTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpanseTrackerUITests.swift; sourceTree = "<group>"; };
+		7711D3E32C18C645009A0AD2 /* ExpanseTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpanseTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7711D3F22C18CF5E009A0AD2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		77092A482BF51C0200C08B59 /* Frameworks */ = {
+		7711D3C02C18C643009A0AD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77092A5E2BF51C0400C08B59 /* Frameworks */ = {
+		7711D3D02C18C645009A0AD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77092A682BF51C0400C08B59 /* Frameworks */ = {
+		7711D3DA2C18C645009A0AD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,136 +73,143 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		77092A422BF51C0200C08B59 = {
+		7711D3BA2C18C643009A0AD2 = {
 			isa = PBXGroup;
 			children = (
-				77092A4D2BF51C0200C08B59 /* BullsEyeViewCode */,
-				77092A642BF51C0400C08B59 /* BullsEyeViewCodeTests */,
-				77092A6E2BF51C0400C08B59 /* BullsEyeViewCodeUITests */,
-				77092A4C2BF51C0200C08B59 /* Products */,
+				7711D3C52C18C643009A0AD2 /* ExpanseTracker */,
+				7711D3D62C18C645009A0AD2 /* ExpanseTrackerTests */,
+				7711D3E02C18C645009A0AD2 /* ExpanseTrackerUITests */,
+				7711D3C42C18C643009A0AD2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		77092A4C2BF51C0200C08B59 /* Products */ = {
+		7711D3C42C18C643009A0AD2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				77092A4B2BF51C0200C08B59 /* BullsEyeViewCode.app */,
-				77092A612BF51C0400C08B59 /* BullsEyeViewCodeTests.xctest */,
-				77092A6B2BF51C0400C08B59 /* BullsEyeViewCodeUITests.xctest */,
+				7711D3C32C18C643009A0AD2 /* ExpanseTracker.app */,
+				7711D3D32C18C645009A0AD2 /* ExpanseTrackerTests.xctest */,
+				7711D3DD2C18C645009A0AD2 /* ExpanseTrackerUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		77092A4D2BF51C0200C08B59 /* BullsEyeViewCode */ = {
+		7711D3C52C18C643009A0AD2 /* ExpanseTracker */ = {
 			isa = PBXGroup;
 			children = (
-				77092A4E2BF51C0200C08B59 /* AppDelegate.swift */,
-				77092A502BF51C0200C08B59 /* SceneDelegate.swift */,
-				77092A522BF51C0200C08B59 /* ViewController.swift */,
-				77092A572BF51C0400C08B59 /* Assets.xcassets */,
-				77092A592BF51C0400C08B59 /* LaunchScreen.storyboard */,
-				77092A5C2BF51C0400C08B59 /* Info.plist */,
+				7711D3C62C18C643009A0AD2 /* ExpanseTrackerApp.swift */,
+				7711D3C82C18C643009A0AD2 /* ContentView.swift */,
+				7711D3F22C18CF5E009A0AD2 /* Extensions.swift */,
+				7711D3CA2C18C645009A0AD2 /* Assets.xcassets */,
+				7711D3CC2C18C645009A0AD2 /* Preview Content */,
 			);
-			path = BullsEyeViewCode;
+			path = ExpanseTracker;
 			sourceTree = "<group>";
 		};
-		77092A642BF51C0400C08B59 /* BullsEyeViewCodeTests */ = {
+		7711D3CC2C18C645009A0AD2 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				77092A652BF51C0400C08B59 /* BullsEyeViewCodeTests.swift */,
+				7711D3CD2C18C645009A0AD2 /* Preview Assets.xcassets */,
 			);
-			path = BullsEyeViewCodeTests;
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		77092A6E2BF51C0400C08B59 /* BullsEyeViewCodeUITests */ = {
+		7711D3D62C18C645009A0AD2 /* ExpanseTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				77092A6F2BF51C0400C08B59 /* BullsEyeViewCodeUITests.swift */,
-				77092A712BF51C0400C08B59 /* BullsEyeViewCodeUITestsLaunchTests.swift */,
+				7711D3D72C18C645009A0AD2 /* ExpanseTrackerTests.swift */,
 			);
-			path = BullsEyeViewCodeUITests;
+			path = ExpanseTrackerTests;
+			sourceTree = "<group>";
+		};
+		7711D3E02C18C645009A0AD2 /* ExpanseTrackerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7711D3E12C18C645009A0AD2 /* ExpanseTrackerUITests.swift */,
+				7711D3E32C18C645009A0AD2 /* ExpanseTrackerUITestsLaunchTests.swift */,
+			);
+			path = ExpanseTrackerUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		77092A4A2BF51C0200C08B59 /* BullsEyeViewCode */ = {
+		7711D3C22C18C643009A0AD2 /* ExpanseTracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77092A752BF51C0400C08B59 /* Build configuration list for PBXNativeTarget "BullsEyeViewCode" */;
+			buildConfigurationList = 7711D3E72C18C645009A0AD2 /* Build configuration list for PBXNativeTarget "ExpanseTracker" */;
 			buildPhases = (
-				77092A472BF51C0200C08B59 /* Sources */,
-				77092A482BF51C0200C08B59 /* Frameworks */,
-				77092A492BF51C0200C08B59 /* Resources */,
+				7711D3BF2C18C643009A0AD2 /* Sources */,
+				7711D3C02C18C643009A0AD2 /* Frameworks */,
+				7711D3C12C18C643009A0AD2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BullsEyeViewCode;
-			productName = BullsEyeViewCode;
-			productReference = 77092A4B2BF51C0200C08B59 /* BullsEyeViewCode.app */;
+			name = ExpanseTracker;
+			productName = ExpanseTracker;
+			productReference = 7711D3C32C18C643009A0AD2 /* ExpanseTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
-		77092A602BF51C0400C08B59 /* BullsEyeViewCodeTests */ = {
+		7711D3D22C18C645009A0AD2 /* ExpanseTrackerTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77092A782BF51C0400C08B59 /* Build configuration list for PBXNativeTarget "BullsEyeViewCodeTests" */;
+			buildConfigurationList = 7711D3EA2C18C645009A0AD2 /* Build configuration list for PBXNativeTarget "ExpanseTrackerTests" */;
 			buildPhases = (
-				77092A5D2BF51C0400C08B59 /* Sources */,
-				77092A5E2BF51C0400C08B59 /* Frameworks */,
-				77092A5F2BF51C0400C08B59 /* Resources */,
+				7711D3CF2C18C645009A0AD2 /* Sources */,
+				7711D3D02C18C645009A0AD2 /* Frameworks */,
+				7711D3D12C18C645009A0AD2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				77092A632BF51C0400C08B59 /* PBXTargetDependency */,
+				7711D3D52C18C645009A0AD2 /* PBXTargetDependency */,
 			);
-			name = BullsEyeViewCodeTests;
-			productName = BullsEyeViewCodeTests;
-			productReference = 77092A612BF51C0400C08B59 /* BullsEyeViewCodeTests.xctest */;
+			name = ExpanseTrackerTests;
+			productName = ExpanseTrackerTests;
+			productReference = 7711D3D32C18C645009A0AD2 /* ExpanseTrackerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		77092A6A2BF51C0400C08B59 /* BullsEyeViewCodeUITests */ = {
+		7711D3DC2C18C645009A0AD2 /* ExpanseTrackerUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 77092A7B2BF51C0400C08B59 /* Build configuration list for PBXNativeTarget "BullsEyeViewCodeUITests" */;
+			buildConfigurationList = 7711D3ED2C18C645009A0AD2 /* Build configuration list for PBXNativeTarget "ExpanseTrackerUITests" */;
 			buildPhases = (
-				77092A672BF51C0400C08B59 /* Sources */,
-				77092A682BF51C0400C08B59 /* Frameworks */,
-				77092A692BF51C0400C08B59 /* Resources */,
+				7711D3D92C18C645009A0AD2 /* Sources */,
+				7711D3DA2C18C645009A0AD2 /* Frameworks */,
+				7711D3DB2C18C645009A0AD2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				77092A6D2BF51C0400C08B59 /* PBXTargetDependency */,
+				7711D3DF2C18C645009A0AD2 /* PBXTargetDependency */,
 			);
-			name = BullsEyeViewCodeUITests;
-			productName = BullsEyeViewCodeUITests;
-			productReference = 77092A6B2BF51C0400C08B59 /* BullsEyeViewCodeUITests.xctest */;
+			name = ExpanseTrackerUITests;
+			productName = ExpanseTrackerUITests;
+			productReference = 7711D3DD2C18C645009A0AD2 /* ExpanseTrackerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		77092A432BF51C0200C08B59 /* Project object */ = {
+		7711D3BB2C18C643009A0AD2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
-					77092A4A2BF51C0200C08B59 = {
+					7711D3C22C18C643009A0AD2 = {
 						CreatedOnToolsVersion = 15.2;
 					};
-					77092A602BF51C0400C08B59 = {
+					7711D3D22C18C645009A0AD2 = {
 						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 77092A4A2BF51C0200C08B59;
+						TestTargetID = 7711D3C22C18C643009A0AD2;
 					};
-					77092A6A2BF51C0400C08B59 = {
+					7711D3DC2C18C645009A0AD2 = {
 						CreatedOnToolsVersion = 15.2;
-						TestTargetID = 77092A4A2BF51C0200C08B59;
+						TestTargetID = 7711D3C22C18C643009A0AD2;
 					};
 				};
 			};
-			buildConfigurationList = 77092A462BF51C0200C08B59 /* Build configuration list for PBXProject "BullsEyeViewCode" */;
+			buildConfigurationList = 7711D3BE2C18C643009A0AD2 /* Build configuration list for PBXProject "ExpanseTracker" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -211,36 +217,36 @@
 				en,
 				Base,
 			);
-			mainGroup = 77092A422BF51C0200C08B59;
-			productRefGroup = 77092A4C2BF51C0200C08B59 /* Products */;
+			mainGroup = 7711D3BA2C18C643009A0AD2;
+			productRefGroup = 7711D3C42C18C643009A0AD2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				77092A4A2BF51C0200C08B59 /* BullsEyeViewCode */,
-				77092A602BF51C0400C08B59 /* BullsEyeViewCodeTests */,
-				77092A6A2BF51C0400C08B59 /* BullsEyeViewCodeUITests */,
+				7711D3C22C18C643009A0AD2 /* ExpanseTracker */,
+				7711D3D22C18C645009A0AD2 /* ExpanseTrackerTests */,
+				7711D3DC2C18C645009A0AD2 /* ExpanseTrackerUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		77092A492BF51C0200C08B59 /* Resources */ = {
+		7711D3C12C18C643009A0AD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77092A5B2BF51C0400C08B59 /* LaunchScreen.storyboard in Resources */,
-				77092A582BF51C0400C08B59 /* Assets.xcassets in Resources */,
+				7711D3CE2C18C645009A0AD2 /* Preview Assets.xcassets in Resources */,
+				7711D3CB2C18C645009A0AD2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77092A5F2BF51C0400C08B59 /* Resources */ = {
+		7711D3D12C18C645009A0AD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77092A692BF51C0400C08B59 /* Resources */ = {
+		7711D3DB2C18C645009A0AD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -250,61 +256,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		77092A472BF51C0200C08B59 /* Sources */ = {
+		7711D3BF2C18C643009A0AD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77092A532BF51C0200C08B59 /* ViewController.swift in Sources */,
-				77092A4F2BF51C0200C08B59 /* AppDelegate.swift in Sources */,
-				77092A512BF51C0200C08B59 /* SceneDelegate.swift in Sources */,
+				7711D3C92C18C643009A0AD2 /* ContentView.swift in Sources */,
+				7711D3F32C18CF5E009A0AD2 /* Extensions.swift in Sources */,
+				7711D3C72C18C643009A0AD2 /* ExpanseTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77092A5D2BF51C0400C08B59 /* Sources */ = {
+		7711D3CF2C18C645009A0AD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77092A662BF51C0400C08B59 /* BullsEyeViewCodeTests.swift in Sources */,
+				7711D3D82C18C645009A0AD2 /* ExpanseTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77092A672BF51C0400C08B59 /* Sources */ = {
+		7711D3D92C18C645009A0AD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77092A702BF51C0400C08B59 /* BullsEyeViewCodeUITests.swift in Sources */,
-				77092A722BF51C0400C08B59 /* BullsEyeViewCodeUITestsLaunchTests.swift in Sources */,
+				7711D3E42C18C645009A0AD2 /* ExpanseTrackerUITestsLaunchTests.swift in Sources */,
+				7711D3E22C18C645009A0AD2 /* ExpanseTrackerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		77092A632BF51C0400C08B59 /* PBXTargetDependency */ = {
+		7711D3D52C18C645009A0AD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 77092A4A2BF51C0200C08B59 /* BullsEyeViewCode */;
-			targetProxy = 77092A622BF51C0400C08B59 /* PBXContainerItemProxy */;
+			target = 7711D3C22C18C643009A0AD2 /* ExpanseTracker */;
+			targetProxy = 7711D3D42C18C645009A0AD2 /* PBXContainerItemProxy */;
 		};
-		77092A6D2BF51C0400C08B59 /* PBXTargetDependency */ = {
+		7711D3DF2C18C645009A0AD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 77092A4A2BF51C0200C08B59 /* BullsEyeViewCode */;
-			targetProxy = 77092A6C2BF51C0400C08B59 /* PBXContainerItemProxy */;
+			target = 7711D3C22C18C643009A0AD2 /* ExpanseTracker */;
+			targetProxy = 7711D3DE2C18C645009A0AD2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		77092A592BF51C0400C08B59 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				77092A5A2BF51C0400C08B59 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		77092A732BF51C0400C08B59 /* Debug */ = {
+		7711D3E52C18C645009A0AD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -367,7 +362,7 @@
 			};
 			name = Debug;
 		};
-		77092A742BF51C0400C08B59 /* Release */ = {
+		7711D3E62C18C645009A0AD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -423,18 +418,19 @@
 			};
 			name = Release;
 		};
-		77092A762BF51C0400C08B59 /* Debug */ = {
+		7711D3E82C18C645009A0AD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ExpanseTracker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BullsEyeViewCode/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -442,7 +438,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.BullsEyeViewCode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.ExpanseTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -450,18 +446,19 @@
 			};
 			name = Debug;
 		};
-		77092A772BF51C0400C08B59 /* Release */ = {
+		7711D3E92C18C645009A0AD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ExpanseTracker/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BullsEyeViewCode/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -469,7 +466,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.BullsEyeViewCode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.ExpanseTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -477,7 +474,7 @@
 			};
 			name = Release;
 		};
-		77092A792BF51C0400C08B59 /* Debug */ = {
+		7711D3EB2C18C645009A0AD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -487,16 +484,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.BullsEyeViewCodeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.ExpanseTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BullsEyeViewCode.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BullsEyeViewCode";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpanseTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ExpanseTracker";
 			};
 			name = Debug;
 		};
-		77092A7A2BF51C0400C08B59 /* Release */ = {
+		7711D3EC2C18C645009A0AD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -506,16 +503,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.BullsEyeViewCodeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.ExpanseTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BullsEyeViewCode.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/BullsEyeViewCode";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExpanseTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ExpanseTracker";
 			};
 			name = Release;
 		};
-		77092A7C2BF51C0400C08B59 /* Debug */ = {
+		7711D3EE2C18C645009A0AD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -523,16 +520,16 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.BullsEyeViewCodeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.ExpanseTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BullsEyeViewCode;
+				TEST_TARGET_NAME = ExpanseTracker;
 			};
 			name = Debug;
 		};
-		77092A7D2BF51C0400C08B59 /* Release */ = {
+		7711D3EF2C18C645009A0AD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -540,55 +537,55 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.BullsEyeViewCodeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.michellyNonato.ExpanseTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = BullsEyeViewCode;
+				TEST_TARGET_NAME = ExpanseTracker;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		77092A462BF51C0200C08B59 /* Build configuration list for PBXProject "BullsEyeViewCode" */ = {
+		7711D3BE2C18C643009A0AD2 /* Build configuration list for PBXProject "ExpanseTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77092A732BF51C0400C08B59 /* Debug */,
-				77092A742BF51C0400C08B59 /* Release */,
+				7711D3E52C18C645009A0AD2 /* Debug */,
+				7711D3E62C18C645009A0AD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77092A752BF51C0400C08B59 /* Build configuration list for PBXNativeTarget "BullsEyeViewCode" */ = {
+		7711D3E72C18C645009A0AD2 /* Build configuration list for PBXNativeTarget "ExpanseTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77092A762BF51C0400C08B59 /* Debug */,
-				77092A772BF51C0400C08B59 /* Release */,
+				7711D3E82C18C645009A0AD2 /* Debug */,
+				7711D3E92C18C645009A0AD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77092A782BF51C0400C08B59 /* Build configuration list for PBXNativeTarget "BullsEyeViewCodeTests" */ = {
+		7711D3EA2C18C645009A0AD2 /* Build configuration list for PBXNativeTarget "ExpanseTrackerTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77092A792BF51C0400C08B59 /* Debug */,
-				77092A7A2BF51C0400C08B59 /* Release */,
+				7711D3EB2C18C645009A0AD2 /* Debug */,
+				7711D3EC2C18C645009A0AD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		77092A7B2BF51C0400C08B59 /* Build configuration list for PBXNativeTarget "BullsEyeViewCodeUITests" */ = {
+		7711D3ED2C18C645009A0AD2 /* Build configuration list for PBXNativeTarget "ExpanseTrackerUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				77092A7C2BF51C0400C08B59 /* Debug */,
-				77092A7D2BF51C0400C08B59 /* Release */,
+				7711D3EE2C18C645009A0AD2 /* Debug */,
+				7711D3EF2C18C645009A0AD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 77092A432BF51C0200C08B59 /* Project object */;
+	rootObject = 7711D3BB2C18C643009A0AD2 /* Project object */;
 }

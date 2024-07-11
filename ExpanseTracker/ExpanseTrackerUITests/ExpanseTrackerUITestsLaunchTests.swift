@@ -1,13 +1,13 @@
 //
-//  BullsEyeViewCodeUITestsLaunchTests.swift
-//  BullsEyeViewCodeUITests
+//  ExpanseTrackerUITestsLaunchTests.swift
+//  ExpanseTrackerUITests
 //
-//  Created by Michelly Nonato on 15/05/24.
+//  Created by Michelly Nonato on 11/06/24.
 //
 
 import XCTest
 
-final class BullsEyeViewCodeUITestsLaunchTests: XCTestCase {
+final class ExpanseTrackerUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

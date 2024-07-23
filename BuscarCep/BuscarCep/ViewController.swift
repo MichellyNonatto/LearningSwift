@@ -5,15 +5,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var cepInput: UITextField!
     @IBOutlet weak var cepTable: UITableView!
     
-    var cidade = ["País", "Estado", "Cidade", "Bairro", "Rua"]
-    var dadosCEP: [String] = ["", "", "", "", ""]
+    var dadosCEP: [String: String] = ["Estado": "", "Cidade": "", "Bairro": "", "Rua": ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cepTable.delegate = self
         cepTable.dataSource = self
-        
-        // Registre a célula
         cepTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
@@ -43,13 +40,12 @@ class ViewController: UIViewController {
             
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    let pais = "Brasil" // Dados do ViaCEP não incluem país
                     let estado = json["uf"] as? String ?? ""
                     let cidade = json["localidade"] as? String ?? ""
                     let bairro = json["bairro"] as? String ?? ""
                     let rua = json["logradouro"] as? String ?? ""
                     
-                    self.dadosCEP = [pais, estado, cidade, bairro, rua]
+                    self.dadosCEP = ["Estado": estado, "Cidade": cidade, "Bairro": bairro, "Rua": rua]
                     
                     DispatchQueue.main.async {
                         self.cepTable.reloadData()
@@ -85,12 +81,19 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cidade.count
+        return dadosCEP.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cepTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(cidade[indexPath.row]): \(dadosCEP[indexPath.row])"
+        let keys = Array(dadosCEP.keys).sorted()
+        let key = keys[indexPath.row]
+        
+        if let value = dadosCEP[key] {
+            cell.textLabel?.text = "\(key): \(value)"
+        }else {
+            cell.textLabel?.text = "\(key): N/A"
+        }
         return cell
     }
 }

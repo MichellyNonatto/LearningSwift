@@ -20,12 +20,14 @@ public class FooterViewComponent: UIView {
     public lazy var textScore: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.textColor = .black
         return view
     }()
     
     public lazy var textRound: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.textColor = .black
         return view
     }()
     

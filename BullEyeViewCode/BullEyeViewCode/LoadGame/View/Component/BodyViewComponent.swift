@@ -26,12 +26,14 @@ public class BodyViewComponent: UIView {
     public lazy var textMin: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.textColor = .black
         return view
     }()
     
     public lazy var textMax: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.textColor = .black
         return view
     }()
     

@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TRk-fV-FFc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ATM Consultoria-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ATM_Consultoria" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="P9K-5Q-Esb">
+                                <rect key="frame" x="40.5" y="125.5" width="294" height="416"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Pja-bU-BkT">
+                                        <rect key="frame" x="14" y="0.0" width="266" height="96"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ErZ-Wc-5yS">
+                                        <rect key="frame" x="0.0" y="130" width="294" height="286"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jpJ-ah-JEV">
+                                                <rect key="frame" x="0.0" y="0.0" width="139" height="286"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aY7-AE-10g">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="135"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="menu_cliente"/>
+                                                        <connections>
+                                                            <segue destination="OAc-Cp-2Qx" kind="show" id="4o9-gz-OaB"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGn-Kh-dYj">
+                                                        <rect key="frame" x="0.0" y="151" width="139" height="135"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="menu_empresa"/>
+                                                        <connections>
+                                                            <segue destination="4BO-sW-x0S" kind="show" id="Fog-sO-HdF"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Epl-nm-4qF">
+                                                <rect key="frame" x="155" y="0.0" width="139" height="286"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="re7-aA-jrb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="139" height="135"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="menu_contato"/>
+                                                        <connections>
+                                                            <segue destination="qcC-dk-z4A" kind="show" id="PfR-hp-bXV"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPR-fi-ich">
+                                                        <rect key="frame" x="0.0" y="151" width="139" height="135"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="menu_servico"/>
+                                                        <connections>
+                                                            <segue destination="Oah-ED-Rtr" kind="show" id="xab-ms-wzP"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P9K-5Q-Esb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Rlx-n2-s9W"/>
+                            <constraint firstItem="P9K-5Q-Esb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vPD-kS-w9i"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ATM Consultoria" id="MNA-J7-SVi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2949.5999999999999" y="-27.436281859070466"/>
+        </scene>
+        <!--Contato-->
+        <scene sceneID="Jbe-JQ-TFy">
+            <objects>
+                <viewController id="qcC-dk-z4A" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EPb-go-1dM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bb0-SX-MqO">
+                                <rect key="frame" x="16" y="64" width="343" height="168"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="BjX-ue-OLq">
+                                        <rect key="frame" x="0.0" y="0.0" width="204.5" height="118"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detalhe_contato" translatesAutoresizingMaskIntoConstraints="NO" id="cdz-bH-F7Y">
+                                                <rect key="frame" x="0.0" y="0.0" width="112" height="118"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contato" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pir-a4-A1N">
+                                                <rect key="frame" x="128" y="46" width="76.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" red="0.47058826679999999" green="0.73333334920000004" blue="0.5647059083" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-nZ-QAd">
+                                        <rect key="frame" x="0.0" y="119" width="343" height="49"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tel (11) 3456-1267" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekw-3g-g1I">
+                                                <rect key="frame" x="100" y="0.0" width="143.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="E-mail: atm@atm.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o88-V9-bS0">
+                                                <rect key="frame" x="87.5" y="28.5" width="168" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="dWf-nZ-QAd" firstAttribute="leading" secondItem="Bb0-SX-MqO" secondAttribute="leading" id="OSy-hv-ZvX"/>
+                                    <constraint firstAttribute="trailing" secondItem="dWf-nZ-QAd" secondAttribute="trailing" id="Zk1-Td-Ag6"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cae-Uq-vnZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bb0-SX-MqO" firstAttribute="leading" secondItem="Cae-Uq-vnZ" secondAttribute="leading" constant="16" id="3lw-Ls-0Vj"/>
+                            <constraint firstItem="Bb0-SX-MqO" firstAttribute="top" secondItem="Cae-Uq-vnZ" secondAttribute="top" id="rws-IS-Kuz"/>
+                            <constraint firstAttribute="trailing" secondItem="Bb0-SX-MqO" secondAttribute="trailing" constant="16" id="stD-nI-i96"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contato" style="editor" id="RgK-Y9-eya"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Whr-cG-m5A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328.8000000000002" y="349.47526236881561"/>
+        </scene>
+        <!--Clientes-->
+        <scene sceneID="GeK-7e-P8x">
+            <objects>
+                <viewController id="OAc-Cp-2Qx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fsS-wm-F1g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4Jf-g6-8v5">
+                                <rect key="frame" x="16" y="64" width="343" height="380"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tIu-OA-nVC">
+                                        <rect key="frame" x="0.0" y="0.0" width="178.5" height="116"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detalhe_cliente" translatesAutoresizingMaskIntoConstraints="NO" id="ENm-mb-epx">
+                                                <rect key="frame" x="0.0" y="13" width="85" height="90"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clientes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0v6-Qd-LcS">
+                                                <rect key="frame" x="101" y="45" width="77.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" red="0.73725497719999999" green="0.78431367870000002" blue="0.34509804840000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="u5b-kI-kmx">
+                                        <rect key="frame" x="0.0" y="132" width="343" height="116"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="cliente1" translatesAutoresizingMaskIntoConstraints="NO" id="YhT-wU-5kz">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="55"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy  page when looking at its layout. The point of using Lorem Ipsum is that it has  " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubq-IN-HGS">
+                                                <rect key="frame" x="0.0" y="55" width="326.5" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="z8Z-8g-S2f">
+                                        <rect key="frame" x="0.0" y="264" width="343" height="116"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="cliente2" translatesAutoresizingMaskIntoConstraints="NO" id="h8r-t0-jgo">
+                                                <rect key="frame" x="0.0" y="0.0" width="111" height="55"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum is simply dummy  page when looking at its layout. The point of using Lorem Ipsum is that it has  " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6S-Qf-dyT">
+                                                <rect key="frame" x="0.0" y="55" width="326.5" height="61"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="u5b-kI-kmx" secondAttribute="trailing" id="EeW-hu-Ck8"/>
+                                    <constraint firstItem="z8Z-8g-S2f" firstAttribute="leading" secondItem="4Jf-g6-8v5" secondAttribute="leading" id="bfo-AE-HGF"/>
+                                    <constraint firstItem="tIu-OA-nVC" firstAttribute="leading" secondItem="4Jf-g6-8v5" secondAttribute="leading" id="pRj-nV-Xwb"/>
+                                    <constraint firstAttribute="trailing" secondItem="z8Z-8g-S2f" secondAttribute="trailing" id="pUt-UC-KJ8"/>
+                                    <constraint firstItem="u5b-kI-kmx" firstAttribute="leading" secondItem="4Jf-g6-8v5" secondAttribute="leading" id="xdO-C0-xAk"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CMb-Ts-1v2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Jf-g6-8v5" firstAttribute="top" secondItem="CMb-Ts-1v2" secondAttribute="top" id="N9C-a5-gYu"/>
+                            <constraint firstItem="4Jf-g6-8v5" firstAttribute="leading" secondItem="CMb-Ts-1v2" secondAttribute="leading" constant="16" id="n1T-Ig-nTa"/>
+                            <constraint firstItem="CMb-Ts-1v2" firstAttribute="trailing" secondItem="4Jf-g6-8v5" secondAttribute="trailing" constant="16" id="qKT-wJ-Y13"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Clientes" style="editor" id="4Mt-Ac-ERY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="usY-7G-BGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4328.8000000000002" y="-320.68965517241384"/>
+        </scene>
+        <!--A Empresa-->
+        <scene sceneID="Hj9-co-6Dp">
+            <objects>
+                <viewController title="A Empresa" id="4BO-sW-x0S" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cv6-LV-qn5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="W7K-bf-iYW">
+                                <rect key="frame" x="16" y="64" width="343" height="237.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="H4z-AZ-5mZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="184.5" height="79"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detalhe_empresa" translatesAutoresizingMaskIntoConstraints="NO" id="Rdl-QC-SNQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="79"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empresa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRt-hq-pha">
+                                                <rect key="frame" x="101" y="26.5" width="83.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" red="0.86274516580000005" green="0.47058826679999999" blue="0.32156863810000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jai-qj-8Fp">
+                                        <rect key="frame" x="0.0" y="95" width="339.5" height="142.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKc-Ge-Ii0">
+                                                <rect key="frame" x="0.0" y="0.0" width="339.5" height="142.5"/>
+                                                <string key="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0Nw-Fy-v8P"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="W7K-bf-iYW" firstAttribute="leading" secondItem="0Nw-Fy-v8P" secondAttribute="leading" constant="16" id="5Xr-HR-N9v"/>
+                            <constraint firstItem="0Nw-Fy-v8P" firstAttribute="trailing" secondItem="W7K-bf-iYW" secondAttribute="trailing" constant="16" id="VTh-Co-WKr"/>
+                            <constraint firstItem="W7K-bf-iYW" firstAttribute="top" secondItem="0Nw-Fy-v8P" secondAttribute="top" id="Xe3-gF-fjr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detalhe Empresa" style="editor" id="Cxm-mG-YHe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xGi-AX-Mnx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2271" y="809"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="s94-pS-Bnm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TRk-fV-FFc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="downloads" id="wuz-HQ-QIe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wYl-WL-hho">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="jIY-VZ-lTA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nhP-XY-kMW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2010.4000000000001" y="-27.436281859070466"/>
+        </scene>
+        <!--Serviços-->
+        <scene sceneID="UoZ-td-DQW">
+            <objects>
+                <viewController id="Oah-ED-Rtr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HEv-9T-gu1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Dh7-f9-ThK">
+                                <rect key="frame" x="16" y="64" width="343" height="144"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="heL-pW-lfR">
+                                        <rect key="frame" x="0.0" y="0.0" width="183.5" height="79"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detalhe_servico" translatesAutoresizingMaskIntoConstraints="NO" id="FnS-oc-GTO">
+                                                <rect key="frame" x="0.0" y="0.0" width="85" height="79"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Serviços" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gN-jW-p2U">
+                                                <rect key="frame" x="101" y="26.5" width="82.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" red="0.38431376220000002" green="0.8078432083" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MBg-qY-6YB">
+                                        <rect key="frame" x="0.0" y="95" width="343" height="49"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consultoria" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQG-6g-Ujj">
+                                                <rect key="frame" x="0.0" y="0.0" width="87" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Processos" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="16" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0z-hs-7WY">
+                                                <rect key="frame" x="0.0" y="28.5" width="79" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MBg-qY-6YB" secondAttribute="trailing" id="6j7-sn-Xcp"/>
+                                    <constraint firstItem="MBg-qY-6YB" firstAttribute="top" secondItem="heL-pW-lfR" secondAttribute="bottom" constant="16" id="EnQ-Oj-rkC"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wKU-Ly-Ouc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dh7-f9-ThK" firstAttribute="top" secondItem="wKU-Ly-Ouc" secondAttribute="top" id="8gq-1r-ezH"/>
+                            <constraint firstItem="Dh7-f9-ThK" firstAttribute="leading" secondItem="wKU-Ly-Ouc" secondAttribute="leading" constant="16" id="LQm-np-J70"/>
+                            <constraint firstItem="wKU-Ly-Ouc" firstAttribute="trailing" secondItem="Dh7-f9-ThK" secondAttribute="trailing" constant="16" id="R7K-8c-1i1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Serviços" style="editor" id="Ctc-tx-8gT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KJf-Jh-cF0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3590" y="808"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cliente1" width="111" height="49"/>
+        <image name="cliente2" width="111" height="55"/>
+        <image name="detalhe_cliente" width="85" height="90"/>
+        <image name="detalhe_contato" width="112" height="118"/>
+        <image name="detalhe_empresa" width="85" height="79"/>
+        <image name="detalhe_servico" width="85" height="79"/>
+        <image name="logo" width="266" height="96"/>
+        <image name="menu_cliente" width="115" height="121"/>
+        <image name="menu_contato" width="115" height="121"/>
+        <image name="menu_empresa" width="115" height="121"/>
+        <image name="menu_servico" width="115" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

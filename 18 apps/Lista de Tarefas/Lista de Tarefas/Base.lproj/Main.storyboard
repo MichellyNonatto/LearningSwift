@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BQk-Va-clp">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Lista de Tarefas-->
+        <scene sceneID="eT3-WH-O0d">
+            <objects>
+                <tableViewController id="cwB-Tt-Us7" customClass="TableViewController" customModule="Lista_de_Tarefas" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jcq-90-BgY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" id="66b-Of-tye">
+                                <rect key="frame" x="0.0" y="50" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="66b-Of-tye" id="oel-zJ-edI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cwB-Tt-Us7" id="aHm-nB-MH5"/>
+                            <outlet property="delegate" destination="cwB-Tt-Us7" id="qsm-J5-FZL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Lista de Tarefas" id="VSk-h2-AJd">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="ClI-fu-Gtr">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="Pk7-MR-g8N" kind="show" id="Vgc-x9-W2h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfH-6S-pdv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015.2" y="-42.728635682158924"/>
+        </scene>
+        <!--Adicionar nova tarefa-->
+        <scene sceneID="gWa-xv-lzQ">
+            <objects>
+                <viewController id="Pk7-MR-g8N" customClass="ViewController" customModule="Lista_de_Tarefas" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="25B-1N-1Yj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nova Tarefa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jui-L8-y6S">
+                                <rect key="frame" x="16" y="80" width="343" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KgG-kd-7dw">
+                                <rect key="frame" x="16" y="121" width="343" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RxO-Uf-J01">
+                                <rect key="frame" x="140" y="171" width="95.5" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Adicionar"/>
+                                <connections>
+                                    <action selector="taskButton:" destination="Pk7-MR-g8N" eventType="touchUpInside" id="sCp-mL-bfp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jGx-DZ-DCu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KgG-kd-7dw" firstAttribute="centerX" secondItem="RxO-Uf-J01" secondAttribute="centerX" id="83G-VB-AwJ"/>
+                            <constraint firstItem="KgG-kd-7dw" firstAttribute="leading" secondItem="Jui-L8-y6S" secondAttribute="leading" id="DXa-ze-VVH"/>
+                            <constraint firstItem="KgG-kd-7dw" firstAttribute="top" secondItem="25B-1N-1Yj" secondAttribute="top" constant="121" id="Dyo-FZ-ocn"/>
+                            <constraint firstItem="KgG-kd-7dw" firstAttribute="top" secondItem="Jui-L8-y6S" secondAttribute="bottom" constant="16" id="Jv1-bi-ZtZ"/>
+                            <constraint firstItem="RxO-Uf-J01" firstAttribute="top" secondItem="KgG-kd-7dw" secondAttribute="bottom" constant="16" id="K1T-Tr-ddM"/>
+                            <constraint firstItem="Jui-L8-y6S" firstAttribute="top" secondItem="jGx-DZ-DCu" secondAttribute="top" constant="16" id="ceP-f8-mEt"/>
+                            <constraint firstItem="RxO-Uf-J01" firstAttribute="centerX" secondItem="25B-1N-1Yj" secondAttribute="centerX" id="dgb-WX-HHK"/>
+                            <constraint firstItem="KgG-kd-7dw" firstAttribute="trailing" secondItem="Jui-L8-y6S" secondAttribute="trailing" id="rWw-HK-Rko"/>
+                            <constraint firstItem="KgG-kd-7dw" firstAttribute="leading" secondItem="25B-1N-1Yj" secondAttribute="leadingMargin" id="yc6-7Y-oXG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Adicionar nova tarefa" style="editor" id="Zw0-F7-b2A"/>
+                    <connections>
+                        <outlet property="taskInput" destination="KgG-kd-7dw" id="LOT-xe-eTk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pid-aB-mpn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2828" y="-43"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qB2-ba-9lG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BQk-Va-clp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wVE-xI-Md4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cwB-Tt-Us7" kind="relationship" relationship="rootViewController" id="jTB-3h-fZh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26w-ga-lm8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="-42.728635682158924"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

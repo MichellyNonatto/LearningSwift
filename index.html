@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Chosen Palette: Dracula -->
     <!-- Application Structure Plan: A single-page application with a vertical scrolling flow. The structure is thematic, divided into three main phases mirroring the source report, which is the most intuitive user flow for a learning roadmap. A top section provides a visual summary and progress tracking via a Chart.js donut chart, offering immediate engagement. Each phase is a collapsible section (accordion style) containing cards for each course. Clicking a card reveals detailed topics. This interactive structure (timeline -> phases -> course cards -> details) was chosen to guide the user progressively, preventing information overload and allowing them to focus on one learning stage at a time, enhancing usability and motivation. New sections for competencies, projects, and resources have been added to each phase to provide deeper learning context. Progress is now saved to localStorage for persistence. -->
     <!-- Visualization & Content Choices: 
         - Overall Progress: Goal: Inform/Engage. Viz: Donut Chart (Chart.js/Canvas). Interaction: Checkboxes on courses update the chart, and state is saved/loaded from localStorage. Justification: Gamifies the learning process, providing a clear visual indicator of accomplishment that persists across sessions.
@@ -19,58 +19,74 @@
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        .phase-card.completed { border-color: #2dd4bf; background-color: #f0fdfa; }
+        body { 
+            font-family: 'Inter', sans-serif;
+            background-color: #282a36; /* Dracula Background */
+            color: #f8f8f2; /* Dracula Foreground */
+        }
+        .phase-card.completed { 
+            border-color: #ff79c6; /* Dracula Pink */
+            background-color: #44475a; /* Dracula Current Line */
+        }
         .smooth-scroll { scroll-behavior: smooth; }
-        .chart-container { position: relative; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; height: 320px; max-height: 320px; }
+        .chart-container { position: relative; width: 100%; max-width: 300px; margin-left: auto; margin-right: auto; height: 300px; max-height: 300px; }
         .details-icon { transition: transform 0.3s; }
         .details-icon.rotated { transform: rotate(180deg); }
+        .timeline-line {
+            position: absolute;
+            top: 50%; /* Center vertically */
+            left: 0;
+            width: 100%;
+            height: 4px;
+            transform: translateY(-50%);
+            z-index: 0;
+        }
     </style>
 </head>
-<body class="bg-stone-50 text-stone-800 smooth-scroll">
+<body class="smooth-scroll">
 
     <div class="container mx-auto px-4 py-8 md:py-12">
 
         <!-- Header -->
         <header class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-teal-800">Roadmap de Desenvolvimento Swift</h1>
-            <p class="mt-4 text-lg text-stone-600">Sua jornada interativa do nível júnior ao pleno.</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-[#ff79c6]">Roadmap de Desenvolvimento Swift</h1>
+            <p class="mt-4 text-lg text-[#bd93f9]">Sua jornada interativa para o próximo nível.</p>
         </header>
 
         <!-- Main Content -->
         <main class="space-y-16">
 
             <!-- Progress & Overview Section -->
-            <section class="bg-white p-6 rounded-2xl shadow-lg">
-                <h2 class="text-2xl font-bold text-center mb-2 text-teal-700">Seu Progresso</h2>
-                <p class="text-center text-stone-600 mb-6">Marque os cursos que você completar e veja sua jornada tomar forma. Seu progresso é salvo automaticamente.</p>
+            <section class="bg-[#44475a] p-6 rounded-2xl shadow-lg border border-[#6272a4]">
+                <h2 class="text-2xl font-bold text-center mb-2 text-[#f8f8f2]">Seu Progresso</h2>
+                <p class="text-center text-[#bd93f9] mb-8">Marque os cursos que você completar e veja sua jornada tomar forma. Seu progresso é salvo automaticamente.</p>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                     <div class="chart-container">
                         <canvas id="progressChart"></canvas>
                         <div id="chart-text" class="absolute inset-0 flex flex-col items-center justify-center text-center pointer-events-none">
-                           <span id="progress-percentage" class="text-4xl font-bold text-teal-800">0%</span>
-                           <span id="progress-count" class="text-sm text-stone-500">0 de 6 concluídos</span>
+                           <span id="progress-percentage" class="text-4xl font-bold text-[#f8f8f2]">0%</span>
+                           <span id="progress-count" class="text-sm text-[#bd93f9]">0 de 6 concluídos</span>
                         </div>
                     </div>
                     <div class="lg:col-span-2">
-                        <div id="timeline" class="relative w-full">
-                            <div class="absolute top-1/2 left-0 w-full h-1 bg-teal-200 rounded-full" style="transform: translateY(-50%);"></div>
+                        <div class="relative w-full">
+                            <div class="timeline-line bg-[#6272a4] rounded-full"></div>
                             <div class="relative flex justify-between items-center">
                                 <div class="timeline-item text-center cursor-pointer" data-target="fase-1">
-                                    <div class="bg-white border-4 border-teal-500 w-8 h-8 rounded-full mx-auto flex items-center justify-center transition-transform duration-300 hover:scale-110">
-                                        <span class="text-teal-500 font-bold">1</span>
+                                    <div class="relative z-10 bg-[#44475a] border-4 border-[#ff79c6] w-8 h-8 rounded-full mx-auto flex items-center justify-center transition-transform duration-300 hover:scale-110">
+                                        <span class="text-[#ff79c6] font-bold">1</span>
                                     </div>
                                     <p class="mt-2 font-semibold text-sm md:text-base">Fundamentos</p>
                                 </div>
                                 <div class="timeline-item text-center cursor-pointer" data-target="fase-2">
-                                    <div class="bg-white border-4 border-teal-500 w-8 h-8 rounded-full mx-auto flex items-center justify-center transition-transform duration-300 hover:scale-110">
-                                        <span class="text-teal-500 font-bold">2</span>
+                                    <div class="relative z-10 bg-[#44475a] border-4 border-[#ff79c6] w-8 h-8 rounded-full mx-auto flex items-center justify-center transition-transform duration-300 hover:scale-110">
+                                        <span class="text-[#ff79c6] font-bold">2</span>
                                     </div>
                                     <p class="mt-2 font-semibold text-sm md:text-base">Arquitetura</p>
                                 </div>
                                 <div class="timeline-item text-center cursor-pointer" data-target="fase-3">
-                                    <div class="bg-white border-4 border-teal-500 w-8 h-8 rounded-full mx-auto flex items-center justify-center transition-transform duration-300 hover:scale-110">
-                                        <span class="text-teal-500 font-bold">3</span>
+                                    <div class="relative z-10 bg-[#44475a] border-4 border-[#ff79c6] w-8 h-8 rounded-full mx-auto flex items-center justify-center transition-transform duration-300 hover:scale-110">
+                                        <span class="text-[#ff79c6] font-bold">3</span>
                                     </div>
                                     <p class="mt-2 font-semibold text-sm md:text-base">Futuro</p>
                                 </div>
@@ -85,11 +101,10 @@
                 <!-- Phases will be dynamically inserted here -->
             </div>
             
-            <!-- Continuous Resource -->
-            <section class="text-center bg-white p-6 rounded-2xl shadow-lg">
-                <h3 class="text-2xl font-bold text-teal-700">📚 Recurso de Consulta Contínua</h3>
-                <p class="mt-2 text-stone-600">Use este repositório como sua referência rápida para sintaxe e conceitos da linguagem Swift sempre que tiver uma dúvida pontual.</p>
-                <a href="https://github.com/CodandoApple/aprenda-swift" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-teal-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-teal-700 transition-colors">
+            <section class="text-center bg-[#44475a] p-6 rounded-2xl shadow-lg border border-[#6272a4]">
+                <h3 class="text-2xl font-bold text-[#f8f8f2]">📚 Recurso de Consulta Contínua</h3>
+                <p class="mt-2 text-[#bd93f9]">Use este repositório como sua referência rápida para sintaxe e conceitos da linguagem Swift sempre que tiver uma dúvida pontual.</p>
+                <a href="https://github.com/CodandoApple/aprenda-swift" target="_blank" rel="noopener noreferrer" class="mt-4 inline-block bg-[#ff79c6] text-[#282a36] font-bold py-2 px-6 rounded-lg hover:bg-opacity-90 transition-colors">
                     Acessar aprenda-swift no GitHub
                 </a>
             </section>
@@ -105,24 +120,12 @@
                 objective: 'Dominar a construção de interfaces adaptativas com o framework clássico (UIKit) e fortalecer a base de ciência da computação para escrever código eficiente.',
                 meta: 'Ser capaz de recriar qualquer interface de app usando UIKit e Auto Layout, e saber escolher a estrutura de dados correta para cada problema, pensando em performance.',
                 courses: [
-                    { title: 'Master iOS Auto Layout (Swift/Xcode)', topics: ['**Auto Layout:** Entender o sistema de constraints.', '**Interface Builder vs. Código:** Saber criar layouts nas duas abordagens.', '**Stack Views:** Dominar o uso para criar layouts complexos de forma simples.', '**Resolução de Conflitos:** Aprender a depurar e corrigir problemas de layout.'] },
-                    { title: 'Algorithms and Data Structures in Swift 5', topics: ['**Complexidade (Big O Notation):** Analisar a eficiência do seu código.', '**Estruturas de Dados:** Quando usar `Array`, `Dictionary`, `Set`, `Linked List`, etc.', '**Algoritmos:** Dominar algoritmos de busca e ordenação.', '**Árvores e Grafos:** Conhecer estruturas mais avançadas.'] }
+                    { title: 'Master iOS Auto Layout (Swift/Xcode)', url: 'https://www.udemy.com/course/master-ios-auto-layout-swiftxcode/', topics: ['**Auto Layout:** Entender o sistema de constraints.', '**Interface Builder vs. Código:** Saber criar layouts nas duas abordagens.', '**Stack Views:** Dominar o uso para criar layouts complexos de forma simples.', '**Resolução de Conflitos:** Aprender a depurar e corrigir problemas de layout.'] },
+                    { title: 'Algorithms and Data Structures in Swift 5', url: 'https://www.udemy.com/course/algorithms-and-data-structures-in-swift/', topics: ['**Complexidade (Big O Notation):** Analisar a eficiência do seu código.', '**Estruturas de Dados:** Quando usar `Array`, `Dictionary`, `Set`, `Linked List`, etc.', '**Algoritmos:** Dominar algoritmos de busca e ordenação.', '**Árvores e Grafos:** Conhecer estruturas mais avançadas.'] }
                 ],
-                competencies: [
-                    'Construir UIs complexas e adaptativas com Auto Layout programaticamente e via Storyboard.',
-                    'Analisar a complexidade de tempo e espaço de um algoritmo.',
-                    'Implementar e explicar as principais estruturas de dados e seus casos de uso.',
-                    'Resolver problemas de lógica e algoritmos comuns em entrevistas técnicas.'
-                ],
-                project: {
-                    title: 'App Clone de Calculadora do iOS',
-                    description: 'Recriar a interface e a funcionalidade da calculadora padrão do iOS. Este projeto testa seu domínio sobre layout dinâmico e manipulação de lógica de estado.',
-                    features: ['Layout que se adapta a diferentes tamanhos de tela e orientações (retrato/paisagem).', 'Implementação de todas as operações básicas (+, -, *, /).', 'Lógica para lidar com o estado da calculadora (números decimais, múltiplos operadores, etc.).', 'Uso de `UIStackView` para organizar os botões.']
-                },
-                resources: [
-                    { title: 'Apple Auto Layout Guide', url: 'https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/index.html' },
-                    { title: 'The Swift Algorithm Club', url: 'https://github.com/raywenderlich/swift-algorithm-club' }
-                ]
+                competencies: ['Construir UIs complexas e adaptativas com Auto Layout programaticamente e via Storyboard.', 'Analisar a complexidade de tempo e espaço de um algoritmo.', 'Implementar e explicar as principais estruturas de dados e seus casos de uso.', 'Resolver problemas de lógica e algoritmos comuns em entrevistas técnicas.'],
+                project: { title: 'App Clone de Calculadora do iOS', description: 'Recriar a interface e a funcionalidade da calculadora padrão do iOS. Este projeto testa seu domínio sobre layout dinâmico e manipulação de lógica de estado.', features: ['Layout que se adapta a diferentes tamanhos de tela e orientações (retrato/paisagem).', 'Implementação de todas as operações básicas (+, -, *, /).', 'Lógica para lidar com o estado da calculadora (números decimais, múltiplos operadores, etc.).', 'Uso de `UIStackView` para organizar os botões.'] },
+                resources: [{ title: 'Apple Auto Layout Guide', url: 'https://developer.apple.com/library/archive/documentation/UserExperience/Conceptual/AutolayoutPG/index.html' }, { title: 'The Swift Algorithm Club', url: 'https://github.com/raywenderlich/swift-algorithm-club' }]
             },
             {
                 id: 'fase-2',
@@ -130,24 +133,12 @@
                 objective: 'Aprender a estruturar projetos de forma limpa, escalável e testável, utilizando os padrões da indústria e programação reativa.',
                 meta: 'Construir um aplicativo com a arquitetura MVVM, com cobertura de testes e utilizando Combine para gerenciar o fluxo de dados.',
                 courses: [
-                    { title: 'Design Patterns in Swift', topics: ['**Padrões Criacionais:** Singleton, Factory, Builder.', '**Padrões Estruturais:** Decorator, Adapter, Facade.', '**Padrões Comportamentais:** Observer, Strategy, Delegate.', '**Arquiteturas:** Entender as diferenças entre MVC, MVP e MVVM.'] },
-                    { title: 'iOS & Swift - MVVM, Combine, SnapKit...', topics: ['**Arquitetura MVVM:** Implementar a separação de responsabilidades.', '**Combine:** Introdução à programação reativa.', '**Testes Unitários:** Garantir que a lógica do seu código funciona.', '**Testes de UI e Snapshot:** Validar a interface do usuário de forma automatizada.'] }
+                    { title: 'Design Patterns in Swift', url: 'https://www.udemy.com/course/design-patterns-in-swift-learn-through-exercises-and-projects/', topics: ['**Padrões Criacionais:** Singleton, Factory, Builder.', '**Padrões Estruturais:** Decorator, Adapter, Facade.', '**Padrões Comportamentais:** Observer, Strategy, Delegate.', '**Arquiteturas:** Entender as diferenças entre MVC, MVP e MVVM.'] },
+                    { title: 'iOS & Swift - MVVM, Combine, SnapKit...', url: 'https://www.udemy.com/course/ios-swift-mvvm-combine-snapkit-snapshotuiunit-tests/', topics: ['**Arquitetura MVVM:** Implementar a separação de responsabilidades.', '**Combine:** Introdução à programação reativa.', '**Testes Unitários:** Garantir que a lógica do seu código funciona.', '**Testes de UI e Snapshot:** Validar a interface do usuário de forma automatizada.'] }
                 ],
-                competencies: [
-                    'Estruturar um projeto utilizando a arquitetura MVVM.',
-                    'Escrever testes unitários para ViewModels e Models.',
-                    'Utilizar o framework Combine para lidar com chamadas de API e atualizações de UI.',
-                    'Identificar e aplicar os Design Patterns mais comuns em projetos iOS.'
-                ],
-                project: {
-                    title: 'App de Notícias com API Pública',
-                    description: 'Criar um app que busca e exibe uma lista de notícias de uma API pública (ex: NewsAPI). O foco é na arquitetura, testes e comunicação de rede.',
-                    features: ['Estrutura do projeto em MVVM.', 'Camada de rede para fazer requisições à API usando Combine.', 'Tela principal exibindo a lista de notícias.', 'Tela de detalhes ao tocar em uma notícia.', 'Cobertura de testes unitários para a camada de rede e ViewModels.']
-                },
-                resources: [
-                    { title: 'Using Combine', url: 'https://developer.apple.com/documentation/combine' },
-                    { title: 'The Composable Architecture', url: 'https://github.com/pointfreeco/swift-composable-architecture' }
-                ]
+                competencies: ['Estruturar um projeto utilizando a arquitetura MVVM.', 'Escrever testes unitários para ViewModels e Models.', 'Utilizar o framework Combine para lidar com chamadas de API e atualizações de UI.', 'Identificar e aplicar os Design Patterns mais comuns em projetos iOS.'],
+                project: { title: 'App de Notícias com API Pública', description: 'Criar um app que busca e exibe uma lista de notícias de uma API pública (ex: NewsAPI). O foco é na arquitetura, testes e comunicação de rede.', features: ['Estrutura do projeto em MVVM.', 'Camada de rede para fazer requisições à API usando Combine.', 'Tela principal exibindo a lista de notícias.', 'Tela de detalhes ao tocar em uma notícia.', 'Cobertura de testes unitários para a camada de rede e ViewModels.'] },
+                resources: [{ title: 'Using Combine', url: 'https://developer.apple.com/documentation/combine' }, { title: 'The Composable Architecture', url: 'https://github.com/pointfreeco/swift-composable-architecture' }]
             },
             {
                 id: 'fase-3',
@@ -155,24 +146,12 @@
                 objective: 'Mergulhar nos frameworks modernos da Apple para criar aplicativos de forma declarativa, rápida e eficiente.',
                 meta: 'Ser capaz de desenvolver um aplicativo completo e moderno do zero, utilizando SwiftUI para a interface e SwiftData para a persistência de dados.',
                 courses: [
-                    { title: 'SwiftUI and SwiftData Masterclass', topics: ['**UI Declarativa:** A nova forma de pensar e construir interfaces.', '**Gerenciamento de Estado:** Dominar `@State`, `@Binding`, `@StateObject`, `@EnvironmentObject`.', '**Navegação:** Construir fluxos de navegação complexos.', '**Integração com SwiftData:** Conectar sua UI aos seus dados.'] },
-                    { title: 'SwiftData - Declarative Data Persistence...', topics: ['**Modelagem de Dados:** Criar seus modelos com `@Model`.', '**CRUD:** Operações de Criar, Ler, Atualizar e Deletar.', '**Queries e Filtros:** Buscar e filtrar dados de forma eficiente.', '**Relacionamentos:** Gerenciar dados com relações.'] }
+                    { title: 'SwiftUI and SwiftData Masterclass', url: 'https://www.udemy.com/course/swiftui-masterclass-course-ios-development-with-swift/', topics: ['**UI Declarativa:** A nova forma de pensar e construir interfaces.', '**Gerenciamento de Estado:** Dominar `@State`, `@Binding`, `@StateObject`, `@EnvironmentObject`.', '**Navegação:** Construir fluxos de navegação complexos.', '**Integração com SwiftData:** Conectar sua UI aos seus dados.'] },
+                    { title: 'SwiftData - Declarative Data Persistence...', url: 'https://www.udemy.com/course/swiftdata-declarative-data-persistence-for-swiftui/', topics: ['**Modelagem de Dados:** Criar seus modelos com `@Model`.', '**CRUD:** Operações de Criar, Ler, Atualizar e Deletar.', '**Queries e Filtros:** Buscar e filtrar dados de forma eficiente.', '**Relacionamentos:** Gerenciar dados com relações.'] }
                 ],
-                competencies: [
-                    'Construir interfaces complexas e reativas com SwiftUI.',
-                    'Gerenciar o estado da aplicação de forma eficiente.',
-                    'Modelar e persistir dados localmente com SwiftData.',
-                    'Criar um app SwiftUI completo, desde a UI até a camada de dados.'
-                ],
-                project: {
-                    title: 'App de Lista de Tarefas (To-Do List)',
-                    description: 'Desenvolver um app de lista de tarefas completo, onde o usuário pode adicionar, editar, marcar como concluída e deletar tarefas. Os dados devem persistir após o app ser fechado.',
-                    features: ['Interface 100% em SwiftUI.', 'Uso de SwiftData para salvar, carregar e atualizar as tarefas.', 'Funcionalidade para adicionar novas tarefas.', 'Marcar tarefas como concluídas com uma animação ou mudança de estilo.', 'Opção para deletar tarefas.']
-                },
-                resources: [
-                    { title: 'Apple SwiftUI Tutorials', url: 'https://developer.apple.com/tutorials/swiftui' },
-                    { title: 'SwiftData Documentation', url: 'https://developer.apple.com/documentation/swiftdata' }
-                ]
+                competencies: ['Construir interfaces complexas e reativas com SwiftUI.', 'Gerenciar o estado da aplicação de forma eficiente.', 'Modelar e persistir dados localmente com SwiftData.', 'Criar um app SwiftUI completo, desde a UI até a camada de dados.'],
+                project: { title: 'App de Lista de Tarefas (To-Do List)', description: 'Desenvolver um app de lista de tarefas completo, onde o usuário pode adicionar, editar, marcar como concluída e deletar tarefas. Os dados devem persistir após o app ser fechado.', features: ['Interface 100% em SwiftUI.', 'Uso de SwiftData para salvar, carregar e atualizar as tarefas.', 'Funcionalidade para adicionar novas tarefas.', 'Marcar tarefas como concluídas com uma animação ou mudança de estilo.', 'Opção para deletar tarefas.'] },
+                resources: [{ title: 'Apple SwiftUI Tutorials', url: 'https://developer.apple.com/tutorials/swiftui' }, { title: 'SwiftData Documentation', url: 'https://developer.apple.com/documentation/swiftdata' }]
             }
         ];
 
@@ -187,23 +166,23 @@
                     const phaseElement = document.createElement('section');
                     phaseElement.id = phase.id;
                     
-                    const coursesHTML = phase.courses.map((course, index) => `
-                        <div class="phase-card bg-white p-4 rounded-lg border-2 border-transparent transition-all duration-300" data-course-title="${course.title}">
+                    const coursesHTML = phase.courses.map((course) => `
+                        <div class="phase-card bg-[#44475a] p-4 rounded-lg border-2 border-[#6272a4] transition-all duration-300" data-course-title="${course.title}">
                             <div class="flex items-center justify-between">
-                                <h4 class="text-lg font-semibold text-stone-700 flex-1 pr-4">${course.title}</h4>
+                                <a href="${course.url}" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold text-[#f8f8f2] hover:text-[#ff79c6] flex-1 pr-4">${course.title}</a>
                                 <div class="flex items-center space-x-4">
-                                    <label class="flex items-center cursor-pointer text-sm text-stone-500">
-                                        <input type="checkbox" class="course-checkbox h-5 w-5 rounded border-gray-300 text-teal-600 focus:ring-teal-500 mr-2">
+                                    <label class="flex items-center cursor-pointer text-sm text-[#bd93f9]">
+                                        <input type="checkbox" class="course-checkbox h-5 w-5 rounded border-[#6272a4] bg-[#282a36] text-[#ff79c6] focus:ring-[#ff79c6] mr-2">
                                         Concluído
                                     </label>
-                                    <button class="toggle-details p-2 rounded-full hover:bg-stone-100">
-                                        <div class="details-icon w-5 h-5 text-stone-500">▼</div>
+                                    <button class="toggle-details p-2 rounded-full hover:bg-[#6272a4]">
+                                        <div class="details-icon w-5 h-5 text-[#bd93f9]">▼</div>
                                     </button>
                                 </div>
                             </div>
-                            <div class="course-details hidden mt-4 pl-4 border-l-2 border-teal-100">
+                            <div class="course-details hidden mt-4 pl-4 border-l-2 border-[#6272a4]">
                                 <ul class="list-none space-y-2">
-                                    ${course.topics.map(topic => `<li class="text-stone-600">${topic.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-stone-700">$1</strong>')}</li>`).join('')}
+                                    ${course.topics.map(topic => `<li class="text-[#f8f8f2]">${topic.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-[#8be9fd]">$1</strong>')}</li>`).join('')}
                                 </ul>
                             </div>
                         </div>
@@ -212,37 +191,37 @@
                     const detailsHTML = `
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                             <div>
-                                <h5 class="font-bold text-teal-700 mb-2">✅ O que você deve saber</h5>
-                                <ul class="list-disc list-inside space-y-1 text-stone-600">
+                                <h5 class="font-bold text-[#50fa7b] mb-2">✅ O que você deve saber</h5>
+                                <ul class="list-disc list-inside space-y-1 text-[#f8f8f2]">
                                     ${phase.competencies.map(c => `<li>${c}</li>`).join('')}
                                 </ul>
                             </div>
                             <div>
-                                <h5 class="font-bold text-teal-700 mb-2">💡 Projeto Prático: ${phase.project.title}</h5>
-                                <p class="text-stone-600 mb-2">${phase.project.description}</p>
-                                <ul class="list-disc list-inside space-y-1 text-stone-600">
+                                <h5 class="font-bold text-[#f1fa8c] mb-2">💡 Projeto Prático: ${phase.project.title}</h5>
+                                <p class="text-[#f8f8f2] mb-2">${phase.project.description}</p>
+                                <ul class="list-disc list-inside space-y-1 text-[#f8f8f2]">
                                     ${phase.project.features.map(f => `<li>${f}</li>`).join('')}
                                 </ul>
                             </div>
                         </div>
                         <div class="mt-6">
-                           <h5 class="font-bold text-teal-700 mb-2">🔗 Recursos Complementares</h5>
+                           <h5 class="font-bold text-[#bd93f9] mb-2">🔗 Recursos Complementares</h5>
                            <div class="flex flex-wrap gap-4">
-                            ${phase.resources.map(r => `<a href="${r.url}" target="_blank" rel="noopener noreferrer" class="text-teal-600 hover:text-teal-800 hover:underline">${r.title}</a>`).join('')}
+                            ${phase.resources.map(r => `<a href="${r.url}" target="_blank" rel="noopener noreferrer" class="text-[#8be9fd] hover:text-[#ff79c6] hover:underline">${r.title}</a>`).join('')}
                            </div>
                         </div>
                     `;
 
                     phaseElement.innerHTML = `
-                        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                        <div class="bg-[#44475a] border border-[#6272a4] rounded-2xl shadow-lg overflow-hidden">
                             <div class="p-6">
-                                <h3 class="text-3xl font-bold text-teal-700">${phase.title}</h3>
-                                <p class="mt-2 text-stone-600">${phase.objective}</p>
+                                <h3 class="text-3xl font-bold text-[#f8f8f2]">${phase.title}</h3>
+                                <p class="mt-2 text-[#bd93f9]">${phase.objective}</p>
                             </div>
-                            <div class="p-6 bg-teal-50/50 space-y-4">${coursesHTML}</div>
-                            <div class="p-6 border-t border-teal-100">${detailsHTML}</div>
-                            <div class="p-6 bg-teal-100/50">
-                                <p class="font-semibold text-teal-800 text-center">🎯 <span class="font-bold">Meta da Fase:</span> ${phase.meta}</p>
+                            <div class="p-6 bg-[#282a36]/50 space-y-4">${coursesHTML}</div>
+                            <div class="p-6 border-t border-[#6272a4]">${detailsHTML}</div>
+                            <div class="p-6 bg-[#44475a] border-t border-[#6272a4]">
+                                <p class="font-semibold text-[#f8f8f2] text-center">🎯 <span class="font-bold">Meta da Fase:</span> ${phase.meta}</p>
                             </div>
                         </div>
                     `;
@@ -253,7 +232,7 @@
             const ctx = document.getElementById('progressChart').getContext('2d');
             const progressChart = new Chart(ctx, {
                 type: 'doughnut',
-                data: { labels: ['Concluído', 'Pendente'], datasets: [{ data: [0, totalCourses], backgroundColor: ['#14b8a6', '#f1f5f9'], borderColor: ['#14b8a6', '#f1f5f9'], borderWidth: 1, cutout: '80%' }] },
+                data: { labels: ['Concluído', 'Pendente'], datasets: [{ data: [0, totalCourses], backgroundColor: ['#ff79c6', '#44475a'], borderWidth: 0, cutout: '80%' }] },
                 options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { enabled: false } } }
             });
 
